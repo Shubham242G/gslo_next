@@ -130,9 +130,6 @@ export default function Footer(): JSX.Element {
                   onChange={(e) => setSubscribed(e.target.checked)}
                   className="mt-1 w-4 h-4 bg-transparent border border-gray-500 rounded-sm cursor-pointer"
                 />
-                <label htmlFor="newsletter" className="text-sm text-gray-300 font-light cursor-pointer">
-                  Yes, subscribe me to your newsletter.
-                </label>
               </div>
 
               {/* Submit Button */}
@@ -151,7 +148,7 @@ export default function Footer(): JSX.Element {
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-gray-700">
           <p className="text-gray-400 text-xs font-light text-right">
-            © 2035 by GSLO. Made with Wix Studio™
+            © 2025 by GSLO.
           </p>
         </div>
       </div>

@@ -20,8 +20,8 @@ interface SocialLink {
 
 export default function Navbar(): JSX.Element {
   const navLinks: NavLink[] = [
-    { name: 'ABOUT', href: '#about' },
-    { name: 'SERVICES', href: '#services' },
+    { name: 'ABOUT', href: '/pages/about' },
+    { name: 'SERVICES', href: '/pages/services' },
     { name: 'BLOGS', href: '#blogs' },
     { name: 'CONTACT', href: '#contact' },
   ];
