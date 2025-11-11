@@ -1,233 +1,132 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Plus, Minus } from 'lucide-react';
+import { motion } from 'framer-motion';
+// Icons relevant to Intellectual Property
+import { Lightbulb, Globe,Copyright } from 'lucide-react'; 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState, JSX } from 'react';
 
-// Reusable components (can be extracted to a separate file)
+// --- Reusable Section Component ---
 const Section = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <section className={`py-20 md:py-28 ${className}`}>
     <div className="max-w-6xl mx-auto px-8">{children}</div>
   </section>
 );
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-12 text-center">
-        {children}
-    </h2>
-);
-
 export default function IntellectualPropertyPage(): JSX.Element {
   
-  // Data specific to Intellectual Property
+  // --- Data for Intellectual Property ---
   const whyChooseUsItems = [
-    { title: "End-to-End IP Lifecycle Management", description: "From initial registration to enforcement and litigation, we manage the entire lifecycle of your IP assets." },
-    { title: "Global IP Strategy", description: "We provide strategic advice for protecting your intellectual property not just in India, but across international jurisdictions." },
-    { title: "Specialized IP Litigators", description: "Our dedicated team of IP lawyers has extensive experience in handling complex infringement and validity disputes." },
-    { title: "Proactive Portfolio Management", description: "We help you manage and monetize your IP portfolio, ensuring it aligns with your business objectives." },
+    { icon: Lightbulb, title: "End-to-End IP Lifecycle Management", description: "From initial registration to enforcement and litigation, we manage the entire lifecycle of your IP assets." },
+    { icon: Globe, title: "Global IP Strategy", description: "We provide strategic advice for protecting your intellectual property not just in India, but across international jurisdictions." },
+    { icon: Copyright, title: "Specialized IP Litigators", description: "Our dedicated team of IP lawyers has extensive experience in handling complex infringement and validity disputes." },
   ];
 
   const includedServices = [
-    { title: "Patent Protection" },
-    { title: "Trademark Registration" },
-    { title: "Copyright Protection" },
-    { title: "Trade Secret Management" },
-    { title: "IP Litigation & Dispute Resolution" },
-    { title: "Technology Transfer" },
+    { title: "Patent Protection", description: "Safeguarding your novel inventions and technologies." },
+    { title: "Trademark Registration", description: "Protecting your brand identity, logos, and slogans." },
+    { title: "Copyright Protection", description: "Securing rights for your creative and artistic works." },
+    { title: "Trade Secret Management", description: "Implementing strategies to protect confidential business information." },
+    { title: "IP Litigation & Dispute Resolution", description: "Aggressively defending your IP rights in court." },
+    { title: "Technology Transfer", description: "Facilitating the legal transfer of intellectual property." },
   ];
-
-  const faqs = [
-    { question: "What are the different types of Intellectual Property I can register?", answer: "The main types of IP you can register are Trademarks (for brand names and logos), Patents (for new inventions), Copyrights (for original creative works like art, music, and software), and Designs (for the unique appearance of a product)." },
-    { question: "What is the difference between a trademark and a copyright?", answer: "A trademark protects brand identifiers like names and logos used on goods and services. A copyright protects original works of authorship, such as books, music, art, and software code. They protect different types of intellectual creations." },
-    { question: "How long does IP protection last?", answer: "The duration varies by the type of IP. In India, a trademark is valid for 10 years and can be renewed indefinitely. A patent is typically valid for 20 years. Copyright protection generally lasts for the author's lifetime plus 60 years." },
-  ];
-
-  const relatedServices = [
-    { title: "RERA Compliance", slug: "rera-compliance" },
-    { title: "NCLT Litigation", slug: "nclt-litigation" },
-    { title: "Debt Recovery", slug: "debt-recovery" },
-  ];
-
-  // FAQ Accordion State
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-[#FDFCFB] text-[#4a4a4a] font-serif">
       
-      {/* Hero Section */}
-      <section className="relative bg-gray-50 pt-36 pb-24 text-center overflow-hidden">
-        <div className="max-w-4xl mx-auto px-8">
-            <motion.h1 
-                className="text-4xl md:text-6xl font-light text-gray-900 mb-6 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-            >
-                Safeguarding Innovation:<br/>Understanding Intellectual Property
-            </motion.h1>
-            <motion.p 
-                className="text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-            >
-                Protect your most valuable assets—your ideas. From trademarks to patents, we provide robust legal frameworks to safeguard your intellectual property.
-            </motion.p>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-            >
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                    Secure Your IP
-                </Link>
-            </motion.div>
-        </div>
-      </section>
-
-      {/* About Section */}
+      {/* --- Hero Section --- */}
       <Section>
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+            
+            {/* Image on the Left */}
             <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+                className="relative h-[500px] rounded-md overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
             >
-                <h2 className="text-3xl font-light text-gray-900 mb-6">About Intellectual Property Rights</h2>
-                <div className="space-y-4 text-gray-600 text-base leading-relaxed">
-                    <p>Intellectual Property (IP) refers to creations of the mind, such as inventions, literary and artistic works, designs, and symbols, names, and images used in commerce. IP rights are like any other property right, allowing creators to benefit from their own work or investment in a creation.</p>
-                    <p>At GSLO, we help innovators, artists, and businesses protect these invaluable assets through patents, trademarks, and copyrights, ensuring their creative and economic rights are fully recognized and defended against infringement.</p>
-                </div>
+                {/* <Image 
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800" 
+                  alt="Creative team collaborating on a project with ideas on a board" 
+                  layout="fill" 
+                  className="object-cover" 
+                /> */}
+            </motion.div> 
+            
+            {/* Text on the Right */}
+            <motion.div 
+                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
+            >
+                <p className="text-[#B8860B] font-medium mb-4">A GSLO Practice Area</p>
+                <h1 className="text-5xl md:text-7xl font-bold text-[#2C2C2C] mb-6 leading-tight">
+                    Intellectual Property Rights
+                </h1>
+                <p className="text-lg text-gray-600">
+                  Protect your most valuable assets—your ideas. From trademarks to patents, we provide robust legal frameworks to safeguard your intellectual property.
+                </p>
             </motion.div>
-            {/* <motion.div 
-                className="relative h-80 rounded-lg overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
-            >
-                <Image src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800" alt="Creative team collaborating on a project" fill className="object-cover" />
-            </motion.div> */}
         </div>
       </Section>
       
-      {/* Why Choose GSLO & Contact Form */}
-      <Section className="bg-gray-50">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h2 className="text-3xl font-light text-gray-900 mb-10">Why Choose GSLO?</h2>
-                <div className="space-y-8">
-                    {whyChooseUsItems.map((item, index) => (
-                        <motion.div 
-                            key={index}
-                            className="flex items-start gap-4"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <div className="w-10 h-10 flex-shrink-0 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">{index + 1}</div>
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-800 mb-1">{item.title}</h3>
-                                <p className="text-sm text-gray-600">{item.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
+      {/* --- Why Choose GSLO --- */}
+      <Section className="bg-[#F7F3EE]">
+        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Our Intellectual Property Edge</h2>
+        <div className="grid md:grid-cols-3 gap-12 text-center">
+            {whyChooseUsItems.map((item, index) => (
+                <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.15 }}
+                >
+                    <div className="w-16 h-16 bg-[#B8860B] text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <item.icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#2C2C2C] mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                </motion.div>
+            ))}
+        </div>
+      </Section>
+
+      {/* --- Services Included --- */}
+      <Section>
+        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Our Intellectual Property Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {includedServices.map((service, index) => (
+                <motion.div 
+                    key={index} 
+                    className="bg-white p-8 rounded-lg border border-gray-200"
+                    initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                    <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">{service.title}</h3>
+                    <p className="text-gray-500 text-sm">{service.description}</p>
+                </motion.div>
+            ))}
+        </div>
+      </Section>
+
+       {/* --- Contact Form Section --- */}
+      <Section className="bg-[#F7F3EE]">
+        <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#2C2C2C] mb-6">Protect Your Innovations Today</h2>
+            <p className="text-lg text-gray-600 mb-10">Your ideas have value. Contact us to learn how we can help you protect your trademarks, patents, and copyrights.</p>
             <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg"
+                className="bg-white p-10 rounded-lg shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8 }}
             >
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Connect with us</h3>
-                <form className="space-y-4">
-                    <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                    <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                    <textarea placeholder="Your Message" rows={4} className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-                    <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">Send Message</button>
+                <form className="space-y-5">
+                    <input type="text" placeholder="Your Name" className="w-full p-4 border border-gray-300 rounded-md" />
+                    <input type="email" placeholder="Your Email" className="w-full p-4 border border-gray-300 rounded-md" />
+                    <textarea placeholder="Briefly describe your intellectual property query" rows={5} className="w-full p-4 border border-gray-300 rounded-md"></textarea>
+                    <button type="submit" className="w-full bg-[#B8860B] text-white p-4 rounded-md font-bold text-lg hover:bg-opacity-90">Request IP Consultation</button>
                 </form>
             </motion.div>
         </div>
       </Section>
-
-      {/* Services Included */}
-      <Section>
-        <SectionTitle>Services Included in Intellectual Property Rights</SectionTitle>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {includedServices.map((service, index) => (
-                <motion.div 
-                    key={index} 
-                    className="bg-gray-100 p-6 rounded-lg text-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                    <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
-                </motion.div>
-            ))}
-        </div>
-      </Section>
-
-      {/* Related Services */}
-      <Section className="bg-gray-50">
-        <SectionTitle>Related Services</SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedServices.map((service, index) => (
-                <motion.div
-                    key={index}
-                    className="bg-white border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-shadow"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                >
-                    <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                    <Link href={`/services/${service.slug}`} className="font-semibold text-blue-600 hover:underline">
-                        Learn More
-                    </Link>
-                </motion.div>
-            ))}
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section>
-        <SectionTitle>Intellectual Property Rights Process: Your Answers are here!</SectionTitle>
-        <div className="space-y-4 max-w-3xl mx-auto">
-            {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <button
-                        className="w-full flex justify-between items-center p-5 text-left font-semibold"
-                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    >
-                        {faq.question}
-                        {openFaq === index ? <Minus size={18} /> : <Plus size={18} />}
-                    </button>
-                    <AnimatePresence>
-                        {openFaq === index && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                            >
-                                <p className="p-5 pt-0 text-gray-600">{faq.answer}</p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
-            ))}
-        </div>
-      </Section>
-      
     </div>
   );
 }

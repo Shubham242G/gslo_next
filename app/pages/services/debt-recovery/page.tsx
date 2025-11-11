@@ -38,12 +38,6 @@ export default function DebtRecoveryPage(): JSX.Element {
     { title: "Enforcement of Decrees" },
   ];
 
-  const faqs = [
-    { question: "What is the first step in recovering a commercial debt?", answer: "The first step is typically to send a formal demand letter or legal notice to the debtor. This letter, drafted by a lawyer, outlines the debt, demands payment by a specific date, and states the legal consequences of non-payment. It often prompts payment without further legal action." },
-    { question: "What legal options are available if a debtor refuses to pay?", answer: "If a demand letter is unsuccessful, you can file a civil suit for recovery of money, initiate insolvency proceedings against a corporate debtor under the Insolvency and Bankruptcy Code (IBC), or file a criminal complaint for cheque bouncing if applicable." },
-    { question: "How long does the debt recovery process take?", answer: "The timeline can vary significantly based on the complexity of the case, the debtor's response, and the legal path chosen. Pre-litigation settlement can be quick, while a contested lawsuit can take several months or even years." },
-  ];
-
   const relatedServices = [
     { title: "Property Law", slug: "property-law" },
     { title: "Labour Law", slug: "labour-law" },
@@ -57,35 +51,38 @@ export default function DebtRecoveryPage(): JSX.Element {
     <div className="bg-white text-gray-800">
       
       {/* Hero Section */}
-      <section className="relative bg-gray-50 pt-36 pb-24 text-center overflow-hidden">
-        <div className="max-w-4xl mx-auto px-8">
-            <motion.h1 
-                className="text-4xl md:text-6xl font-light text-gray-900 mb-6 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+      <Section>
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+            
+            {/* Image on the Left */}
+            <motion.div 
+                className="relative h-[500px] rounded-md overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
             >
-                Effective Debt Recovery Solutions:<br/>Reclaim What's Rightfully Yours
-            </motion.h1>
-            <motion.p 
-                className="text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                {/* <Image 
+                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800" 
+                  alt="Financial documents and a calculator symbolizing debt recovery" 
+                  layout="fill" 
+                  className="object-cover" 
+                /> */}
+            </motion.div> 
+            
+            {/* Text on the Right */}
+            <motion.div 
+                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
             >
-                Unpaid debts can cripple cash flow and hinder growth. We provide strategic, ethical, and effective legal solutions to recover your outstanding dues.
-            </motion.p>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-            >
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                    Recover Your Dues
-                </Link>
+                <p className="text-[#B8860B] font-medium mb-4">A GSLO Practice Area</p>
+                <h1 className="text-5xl md:text-7xl font-bold text-[#2C2C2C] mb-6 leading-tight">
+                    Effective Debt Recovery Solutions
+                </h1>
+                <p className="text-lg text-gray-600">
+                  Unpaid debts can cripple cash flow and hinder growth. We provide strategic, ethical, and effective legal solutions to recover your outstanding dues.
+                </p>
             </motion.div>
         </div>
-      </section>
+      </Section>
 
       {/* About Section */}
       <Section>
@@ -197,36 +194,6 @@ export default function DebtRecoveryPage(): JSX.Element {
         </div>
       </Section>
 
-      {/* FAQ Section */}
-      <Section>
-        <SectionTitle>Your Debt Recovery Questions Answered</SectionTitle>
-        <div className="space-y-4 max-w-3xl mx-auto">
-            {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <button
-                        className="w-full flex justify-between items-center p-5 text-left font-semibold"
-                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    >
-                        {faq.question}
-                        {openFaq === index ? <Minus size={18} /> : <Plus size={18} />}
-                    </button>
-                    <AnimatePresence>
-                        {openFaq === index && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                            >
-                                <p className="p-5 pt-0 text-gray-600">{faq.answer}</p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
-            ))}
-        </div>
-      </Section>
       
     </div>
   );

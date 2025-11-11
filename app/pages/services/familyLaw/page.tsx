@@ -1,234 +1,146 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Plus, Minus } from 'lucide-react';
+import { motion } from 'framer-motion';
+// Icons relevant to Debt Recovery
+import { Briefcase, Milestone, HandCoins } from 'lucide-react'; 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState, JSX } from 'react';
 
-// Reusable components for this page
+// --- Reusable Section Component ---
 const Section = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <section className={`py-20 md:py-28 ${className}`}>
     <div className="max-w-6xl mx-auto px-8">{children}</div>
   </section>
 );
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-12 text-center">
-        {children}
-    </h2>
-);
-
-export default function FamilyLawPage(): JSX.Element {
+export default function DebtRecoveryPage(): JSX.Element {
   
-  // Data for the page sections
+  // --- Data for Debt Recovery ---
   const whyChooseUsItems = [
-    { title: "Client-Centric Approach", description: "Our focus is on your needs, ensuring personalized and empathetic guidance." },
-    { title: "Proven Track Record", description: "A history of successful outcomes and satisfied clients in complex family law cases." },
-    { title: "Holistic Legal Solutions", description: "We consider all aspects of your situation to provide comprehensive legal strategies." },
-    { title: "Experienced Legal Expertise", description: "Decades of combined experience in all facets of family law litigation and negotiation." },
+    { icon: Briefcase, title: "Customized Recovery Strategies", description: "We tailor our approach based on the debt amount, debtor's history, and your business relationship." },
+    { icon: Milestone, title: "High Success Rate", description: "Our firm has a proven track record of successfully recovering debts for a diverse range of clients." },
+    { icon: HandCoins, title: "Pre-Litigation Expertise", description: "We emphasize resolving matters through negotiation before resorting to costly litigation." },
   ];
 
   const includedServices = [
-    { title: "Divorce and Separation" },
-    { title: "Property Division" },
-    { title: "Child Custody and Support" },
-    { title: "Spousal Maintenance" },
-    { title: "Adoption" },
-    { title: "Domestic Violence" },
+    { title: "Debt Assessment & Strategy", description: "Analyzing the debt and formulating a clear recovery plan." },
+    { title: "Legal Proceedings", description: "Filing civil suits or insolvency petitions as required." },
+    { title: "Negotiation and Settlement", description: "Expert negotiation to secure payment without a lengthy trial." },
+    { title: "Tracing and Asset Recovery", description: "Locating debtor assets to enforce judgments." },
+    { title: "Insolvency Petitions", description: "Utilizing the IBC framework for corporate debtors." },
+    { title: "Enforcement of Decrees", description: "Ensuring court orders for payment are successfully executed." },
   ];
-
-  const faqs = [
-    { question: "What are the first steps in a divorce case?", answer: "The first step is to consult with an experienced family law attorney to understand your rights and options. We will guide you through filing the initial petition and ensuring all legal requirements are met from the start." },
-    { question: "How is child custody determined during a divorce?", answer: "Child custody is determined based on the 'best interests of the child' standard. This includes factors like each parent's ability to provide a stable environment, the child's preference (if old enough), and the history of each parent's involvement." },
-    { question: "Can I modify a child support or custody order?", answer: "Yes, orders can be modified if there has been a 'substantial change in circumstances' since the original order was made. This could include a change in income, relocation, or a change in the child's needs." },
-  ];
-
-  const relatedServices = [
-    { title: "Writ Litigation", slug: "writ-litigation" },
-    { title: "Supreme Court Practice", slug: "supreme-court-practice" },
-    { title: "Debt Recovery", slug: "debt-recovery" },
-  ];
-
-  // FAQ Accordion State
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-[#FDFCFB] text-[#4a4a4a] font-serif">
       
-      {/* Hero Section */}
-      <section className="relative bg-gray-50 pt-36 pb-24 text-center overflow-hidden">
-        <div className="max-w-4xl mx-auto px-8">
-            <motion.h1 
-                className="text-4xl md:text-6xl font-light text-gray-900 mb-6 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-            >
-                Family Law Demystified:<br/>Understanding Your Rights
-            </motion.h1>
-            <motion.p 
-                className="text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-            >
-                Navigating the complexities of family law can be overwhelming, but our experienced team is here to clarify your options and safeguard your interests.
-            </motion.p>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-            >
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                    Schedule a Consultation
-                    <ArrowRight size={18} />
-                </Link>
-            </motion.div>
-        </div>
-      </section>
+      {/* --- Hero Section --- */}
+      <Section className="text-center">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+        >
+            <p className="text-[#B8860B] font-medium mb-4">A GSLO Practice Area</p>
+            <h1 className="text-5xl md:text-7xl font-bold text-[#2C2C2C] mb-6 leading-tight">
+                Debt Recovery Solutions
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Unpaid debts can cripple cash flow and hinder growth. We provide strategic, ethical, and effective legal solutions to recover what's rightfully yours.
+            </p>
+        </motion.div>
+      </Section>
 
-      {/* About Section */}
+      {/* --- About Section --- */}
       <Section>
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+            
+            {/* Image on the Left */}
             <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+                className="relative h-[500px] rounded-md overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
             >
-                <h2 className="text-3xl font-light text-gray-900 mb-6">About Family Law</h2>
-                <div className="space-y-4 text-gray-600 text-base leading-relaxed">
-                    <p>Family law is a specialized field of legal practice that deals with the rules, regulations, and court procedures governing the relationships between the family. It's a broad area that covers marriage, divorce, child custody, adoption, and other domestic matters.</p>
-                    <p>A key focus of our practice is to achieve resolutions that protect our clients' interests while minimizing emotional and financial strain, whether through negotiation, mediation, or litigation.</p>
+                {/* <Image 
+                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800" 
+                  alt="Financial documents, a calculator, and a pen" 
+                  layout="fill" 
+                  className="object-cover" 
+                /> */}
+            </motion.div> 
+            
+            {/* Text on the Right */}
+            <motion.div 
+                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
+            >
+                <h2 className="text-4xl font-bold text-[#2C2C2C] mb-6">Restoring Your Financial Health</h2>
+                <div className="space-y-6 text-gray-600 text-base leading-relaxed">
+                    <p>Debt recovery is the legal process of collecting outstanding payments from individuals or businesses. A structured legal approach is essential for ensuring that creditors can reclaim their funds in a timely and lawful manner, thereby maintaining financial stability and operational health.</p>
+                    <p>Our firm specializes in both commercial and individual debt recovery. We utilize a range of legal tools—from demand notices and negotiation to civil suits and insolvency proceedings—all while adhering to the highest ethical standards to protect our clients' reputations.</p>
                 </div>
             </motion.div>
-            {/* <motion.div 
-                className="relative h-80 rounded-lg overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
-            >
-                <Image src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" alt="Legal professionals in a meeting" fill className="object-cover" />
-            </motion.div> */}
         </div>
       </Section>
       
-      {/* Why Choose GSLO & Contact Form */}
-      <Section className="bg-gray-50">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h2 className="text-3xl font-light text-gray-900 mb-10">Why Choose GSLO?</h2>
-                <div className="space-y-8">
-                    {whyChooseUsItems.map((item, index) => (
-                        <motion.div 
-                            key={index}
-                            className="flex items-start gap-4"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <div className="w-10 h-10 flex-shrink-0 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">{index + 1}</div>
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-800 mb-1">{item.title}</h3>
-                                <p className="text-sm text-gray-600">{item.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
+      {/* --- Why Choose GSLO --- */}
+      <Section className="bg-[#F7F3EE]">
+        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Why Entrust Us with Your Recovery?</h2>
+        <div className="grid md:grid-cols-3 gap-12 text-center">
+            {whyChooseUsItems.map((item, index) => (
+                <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.15 }}
+                >
+                    <div className="w-16 h-16 bg-[#B8860B] text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <item.icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#2C2C2C] mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                </motion.div>
+            ))}
+        </div>
+      </Section>
+
+      {/* --- Services Included --- */}
+      <Section>
+        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Our Debt Recovery Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {includedServices.map((service, index) => (
+                <motion.div 
+                    key={index} 
+                    className="bg-white p-8 rounded-lg border border-gray-200"
+                    initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                    <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">{service.title}</h3>
+                    <p className="text-gray-500 text-sm">{service.description}</p>
+                </motion.div>
+            ))}
+        </div>
+      </Section>
+
+       {/* --- Contact Form Section --- */}
+      <Section className="bg-[#F7F3EE]">
+        <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#2C2C2C] mb-6">Initiate Your Debt Recovery Process</h2>
+            <p className="text-lg text-gray-600 mb-10">Don't let outstanding debts affect your bottom line. Contact us for a consultation on the best strategy to recover your funds.</p>
             <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg"
+                className="bg-white p-10 rounded-lg shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8 }}
             >
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Connect with us</h3>
-                <form className="space-y-4">
-                    <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                    <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                    <textarea placeholder="Your Message" rows={4} className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-                    <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">Send Message</button>
+                <form className="space-y-5">
+                    <input type="text" placeholder="Your Name" className="w-full p-4 border border-gray-300 rounded-md" />
+                    <input type="email" placeholder="Your Email" className="w-full p-4 border border-gray-300 rounded-md" />
+                    <textarea placeholder="Briefly describe the debt and amount" rows={5} className="w-full p-4 border border-gray-300 rounded-md"></textarea>
+                    <button type="submit" className="w-full bg-[#B8860B] text-white p-4 rounded-md font-bold text-lg hover:bg-opacity-90">Request Consultation</button>
                 </form>
             </motion.div>
         </div>
       </Section>
-
-      {/* Services Included */}
-      <Section>
-        <SectionTitle>Services Included in Family Law</SectionTitle>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {includedServices.map((service, index) => (
-                <motion.div 
-                    key={index} 
-                    className="bg-gray-100 p-6 rounded-lg text-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                    <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
-                </motion.div>
-            ))}
-        </div>
-      </Section>
-
-      {/* Related Services */}
-      <Section className="bg-gray-50">
-        <SectionTitle>Related Services</SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedServices.map((service, index) => (
-                <motion.div
-                    key={index}
-                    className="bg-white border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-shadow"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                >
-                    <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                    <Link href={`/services/${service.slug}`} className="font-semibold text-blue-600 hover:underline">
-                        Learn More
-                    </Link>
-                </motion.div>
-            ))}
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section>
-        <SectionTitle>Navigating Family Law: Your FAQs Answered</SectionTitle>
-        <div className="space-y-4 max-w-3xl mx-auto">
-            {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <button
-                        className="w-full flex justify-between items-center p-5 text-left font-semibold"
-                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    >
-                        {faq.question}
-                        {openFaq === index ? <Minus size={18} /> : <Plus size={18} />}
-                    </button>
-                    <AnimatePresence>
-                        {openFaq === index && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                            >
-                                <p className="p-5 pt-0 text-gray-600">{faq.answer}</p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
-            ))}
-        </div>
-      </Section>
-      
     </div>
   );
 }
