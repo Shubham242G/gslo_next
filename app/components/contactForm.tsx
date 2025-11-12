@@ -23,41 +23,41 @@ export default function ContactForm({
 }: ContactFormProps): JSX.Element {
   return (
     <motion.div
-      className="bg-white p-10 rounded-lg shadow-lg border border-gray-200"
+      className="bg-transparent p-0"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
     >
-      <h3 className="text-3xl font-bold text-[#2C2C2C] mb-2">{title}</h3>
-      {description && <p className="text-gray-600 mb-6">{description}</p>}
+      <h3 className="text-3xl font-semibold text-white mb-2">{title}</h3>
+      {description && <p className="text-gray-400 mb-6">{description}</p>}
       
-      <form className="space-y-5">
+      <form className="space-y-6">
         <input 
           type="text" 
           placeholder={formPlaceholders.name} 
-          className="w-full p-4 border border-gray-300 rounded-md font-sans" 
+          className="w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors" 
         />
         <input 
           type="email" 
           placeholder={formPlaceholders.email} 
-          className="w-full p-4 border border-gray-300 rounded-md font-sans" 
+          className="w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors" 
         />
         {formPlaceholders.phone && (
           <input 
             type="tel" 
             placeholder={formPlaceholders.phone} 
-            className="w-full p-4 border border-gray-300 rounded-md font-sans" 
+            className="w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors" 
           />
         )}
         <textarea 
           placeholder={formPlaceholders.message} 
           rows={5} 
-          className="w-full p-4 border border-gray-300 rounded-md font-sans"
+          className="w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
         ></textarea>
         <button 
           type="submit" 
-          className="w-full bg-[#B8860B] text-white p-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition-colors"
+          className="w-full bg-white text-black p-4 rounded-md font-semibold text-lg hover:bg-gray-200 transition-colors"
         >
           {buttonText}
         </button>

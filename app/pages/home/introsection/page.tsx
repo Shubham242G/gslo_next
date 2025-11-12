@@ -54,7 +54,7 @@ export default function IntroSection(): JSX.Element {
   };
 
   return (
-    <section className="min-h-screen bg-[#080c20] text-white flex items-center justify-between px-16 max-w-[1400px] mx-auto pt-24 relative">
+    <section className="min-h-screen bg-gradient-to-b from-gray-900 to-[#080c20] text-white flex items-center justify-between px-16 max-w-[1400px] mx-auto pt-24 relative">
       {/* Left Side - Services List */}
       <motion.div
         className="flex-1"
