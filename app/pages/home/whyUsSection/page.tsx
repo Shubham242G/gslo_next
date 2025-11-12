@@ -68,7 +68,7 @@ export default function WhyUsSection(): JSX.Element {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-black via-[#0a0e27] to-[#1a2357] text-white flex flex-col items-center justify-center px-16 py-24">
+    <section className="min-h-screen bg-gradient-to-b from-[#080c20] to-[#07091a] text-white flex flex-col items-center justify-center px-16 py-24">
       <div className="max-w-[1400px] w-full">
         {/* Heading and Subtitle */}
         <motion.div

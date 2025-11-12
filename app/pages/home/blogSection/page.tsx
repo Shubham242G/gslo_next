@@ -13,14 +13,33 @@ interface BlogPost {
   image: string;
 }
 
+interface Client {
+  name: string;
+  logo: string;
+}
+
 export default function BlogSection(): JSX.Element {
   const featuredPost: BlogPost = {
     date: 'Aug 21, 2024',
     title: 'Building Strong Teams',
     subtitle: 'Best Practices in Human Resources Excellence',
     description: 'Create a blog post subtitle that summarizes your post in a few...',
-    image: '/images/blog/featured-post.jpg',
+    image: '/assets/the_team.jpg',
   };
+   
+
+  // Client logos - duplicate for seamless infinite scroll
+  const clients: Client[] = [
+    { name: 'Indian Bar Association', logo: '/images/clients/client-1.png' },
+    { name: 'Biofoot', logo: '/images/clients/client-2.png' },
+    { name: 'Medical Council of India', logo: '/images/clients/client-3.png' },
+    { name: 'Care at Home', logo: '/images/clients/client-4.png' },
+    { name: 'Healthcare Services', logo: '/images/clients/client-5.png' },
+  ];
+
+  // Duplicate clients array for seamless loop
+  const duplicatedClients = [...clients, ...clients];
+
 
   const headingVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -48,7 +67,7 @@ export default function BlogSection(): JSX.Element {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-[#5b6bd5] via-[#4a5bc4] to-[#3d4db3] text-white flex flex-col items-center justify-center px-16 py-24">
+    <section className="min-h-screen bg-gradient-to-b from-[#050713] to-[#03050d] text-white flex flex-col items-center justify-center px-16 py-24">
       <div className="max-w-[1400px] w-full">
         {/* Heading and Subtitle */}
         <motion.div
@@ -130,6 +149,57 @@ export default function BlogSection(): JSX.Element {
             </motion.div>
           </motion.button>
         </motion.div>
+      </div>
+      {/* Our Clients Section */}
+      <div className="bg-[#03050d] py-20 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-16">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-5xl md:text-6xl font-light tracking-wide text-white mb-4">
+              Our Clients
+            </h2>
+            <p className="text-white text-lg font-light">
+              We believe every client is a valuable, long-term partner.
+            </p>
+          </motion.div>
+
+          {/* Infinite Scrolling Logos */}
+          <div className="relative w-full overflow-hidden mt-16">
+            <motion.div
+              className="flex gap-16 items-center"
+              animate={{
+                x: [0, -1000],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
+            >
+              {duplicatedClients.map((client: Client, index: number) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[200px] h-[100px] relative grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                >
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

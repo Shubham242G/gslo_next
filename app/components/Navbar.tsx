@@ -22,8 +22,8 @@ export default function Navbar(): JSX.Element {
   const navLinks: NavLink[] = [
     { name: 'ABOUT', href: '/pages/about' },
     { name: 'SERVICES', href: '/pages/services' },
-    { name: 'BLOGS', href: '#blogs' },
-    { name: 'CONTACT', href: '#contact' },
+    { name: 'BLOGS', href: '/pages/contact-us' },
+    { name: 'CONTACT', href: '/pages/contactUs' },
   ];
 
   const socialLinks: SocialLink[] = [
@@ -36,7 +36,8 @@ export default function Navbar(): JSX.Element {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-[#0a0e27]/80 backdrop-blur-sm"
+      // The background color and backdrop-blur have been removed here
+      className="fixed top-0 left-0 right-0 z-50 px-8 py-6"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -70,9 +71,7 @@ export default function Navbar(): JSX.Element {
           transition={{ delay: 0.3, duration: 0.6, ease: 'backOut' }}
         >
           <Link href="/">
-            <h1 className="text-3xl font-bold tracking-widest text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer">
-              gslo
-            </h1>
+            <img src='/assets/gslo-white.png' className='w-16 sm:ml-43 lg:mr-43' alt='company-logo'/> 
           </Link>
         </motion.div>
 

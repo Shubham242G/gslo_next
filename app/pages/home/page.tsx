@@ -10,10 +10,10 @@ export default function HomePage(): JSX.Element {
   return (
     <main className="bg-[#0a0e27]">
       <HeroSection/>
-      <IntroSection />
-      <TestimonialsSection />
       <WhoWeAreSection/>
+      <IntroSection />
       <WhyUsSection/>
+      <TestimonialsSection />
       <BlogSection/>
     </main>
   );

@@ -33,14 +33,14 @@ export default function Footer(): JSX.Element {
   ];
 
   return (
-    <footer className="bg-[#0a1f0a] text-white">
+    <footer className="bg-gradient-to-b from-[#03050d] to-[#020206] text-white">
       <div className="max-w-[1400px] mx-auto px-16 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Side - Company Info */}
           <div className="space-y-8">
             {/* Logo */}
-            <h2 className="text-4xl font-bold tracking-widest">GSLO</h2>
-
+            <img src='/assets/gslo-white.png' className='w-16' alt='company-logo'/> 
+          
             {/* Navigation Links */}
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
