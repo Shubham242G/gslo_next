@@ -1,127 +1,150 @@
 'use client';
 
 import { motion } from 'framer-motion';
-// Icons relevant to NRI Services
-import { Globe, Home, Briefcase } from 'lucide-react'; 
+import { Globe, Home, Briefcase, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 import { JSX } from 'react';
 
 // --- Reusable Section Component ---
-const Section = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Section = ({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
   <section className={`py-20 md:py-28 ${className}`}>
     <div className="max-w-6xl mx-auto px-8">{children}</div>
   </section>
 );
 
 export default function NRIServicesPage(): JSX.Element {
-  
-  // --- Data for the NRI Services Page ---
   const whyChooseUsItems = [
-    { icon: Globe, title: "Expertise in International and Indian Legal Frameworks", description: "We have a comprehensive knowledge of both Indian and international legal systems, providing holistic and efficient provisions for our NRI clients." },
-    { icon: Briefcase, title: "Personalized Legal Solutions", description: "We recognize that all NRIs face their own unique legal challenges. Our specialized team delivers easy-to-understand advice and tailor-made solutions." },
-    { icon: Home, title: "Seamless Global Legal Representation", description: "Our efficient representation is achieved across several jurisdictions, both in India and abroad, delivering assistance to NRIs as speedily as possible." },
+    {
+      icon: Globe,
+      title: 'Expertise in International and Indian Legal Frameworks',
+      description:
+        'We have a comprehensive knowledge of both Indian and international legal systems, providing holistic and efficient provisions for our NRI clients.',
+    },
+    {
+      icon: Briefcase,
+      title: 'Personalized Legal Solutions',
+      description:
+        'We recognize that all NRIs face their own unique legal challenges. Our specialized team delivers easy-to-understand advice and tailor-made solutions.',
+    },
+    {
+      icon: Home,
+      title: 'Seamless Global Legal Representation',
+      description:
+        'Our efficient representation is achieved across several jurisdictions, both in India and abroad, delivering assistance to NRIs as speedily as possible.',
+    },
   ];
 
   const includedServices = [
-    { title: "Property Transactions and Management", description: "GSLO is committed to facilitating property transactions for NRIs, such as acquisition, sale, leasing, and management, under Indian law." },
-    { title: "Succession Planning and Will Drafting", description: "The concept of estate planning is popular with NRIs. GSLO understands this and therefore guides NRIs on this important matter." },
-    { title: "Investment and Financial Guidance", description: "We provide strategic advice on investment in Indian markets, including stocks, bonds, and real estate, along with tax planning." },
+    {
+      title: 'Property Transactions and Management',
+      description:
+        'GSLO is committed to facilitating property transactions for NRIs, such as acquisition, sale, leasing, and management, under Indian law.',
+    },
+    {
+      title: 'Succession Planning and Will Drafting',
+      description:
+        'The concept of estate planning is popular with NRIs. GSLO understands this and therefore guides NRIs on this important matter.',
+    },
+    {
+      title: 'Investment and Financial Guidance',
+      description:
+        'We provide strategic advice on investment in Indian markets, including stocks, bonds, and real estate, along with tax planning.',
+    },
   ];
 
   return (
-    <div className="bg-[#FDFCFB] text-[#4a4a4a] font-serif">
-      
+    <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* --- Hero Section --- */}
-      <Section>
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-            
-            {/* Image on the Left */}
-            <motion.div 
-                className="relative h-[500px] rounded-md overflow-hidden"
-                initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
-            >
-                <Image 
-                  src="/path-to-your-nri-services-image.jpg" // Replace with your actual image path
-                  alt="A globe and a passport, symbolizing NRI services" 
-                  layout="fill" 
-                  className="object-cover" 
-                />
-            </motion.div> 
-            
-            {/* Text on the Right */}
-            <motion.div 
-                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
-            >
-                <p className="text-[#B8860B] font-medium mb-4">A GSLO Practice Area</p>
-                <h1 className="text-5xl md:text-7xl font-bold text-[#2C2C2C] mb-6 leading-tight">
-                    Seamless Legal Solutions for NRIs: Protecting Your Interests in India
-                </h1>
-                <p className="text-lg text-gray-600">
-                  At GSLO, we're all about helping Non-Resident Indians (NRIs) tackle the tricky world of legal, financial, and property issues in India. We offer smart, customized solutions to safeguard your rights and interests.
-                </p>
-            </motion.div>
+      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+            style={{
+              lineHeight: '1.15',
+              fontWeight: 300,
+            }}
+          >
+            Seamless Legal Support for NRIs
+            <br /> Protecting Your Interests in India
+          </motion.h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            At GSLO, we help Non-Resident Indians (NRIs) navigate legal, property,
+            and financial matters in India—providing smart, customized solutions to
+            safeguard your rights and interests no matter where you live.
+          </p>
         </div>
-      </Section>
-      
+      </section>
+
       {/* --- Why Choose GSLO --- */}
-      <Section className="bg-[#F7F3EE]">
-        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Why Choose GSLO for NRI Services?</h2>
+      <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">
+        <h2 className="text-3xl font-semibold text-center text-white mb-16">
+          Why Choose GSLO for NRI Services?
+        </h2>
         <div className="grid md:grid-cols-3 gap-12 text-center">
-            {whyChooseUsItems.map((item, index) => (
-                <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.15 }}
-                >
-                    <div className="w-16 h-16 bg-[#B8860B] text-white rounded-full flex items-center justify-center mx-auto mb-6">
-                        <item.icon className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#2C2C2C] mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                </motion.div>
-            ))}
+          {whyChooseUsItems.map((item, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="flex flex-col items-center bg-gradient-to-br from-[#1a2238] to-[#0b0f19] p-8 rounded-2xl border border-white/10 shadow-lg"
+            >
+              <div className="bg-[#1dd3b0]/10 p-4 rounded-full mb-5">
+                <item.icon className="w-10 h-10 text-[#1dd3b0]" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm">{item.description}</p>
+            </motion.div>
+          ))}
         </div>
       </Section>
 
       {/* --- Services Included --- */}
       <Section>
-        <h2 className="text-4xl font-bold text-center text-[#2C2C2C] mb-16">Our NRI Services</h2>
+        <h2 className="text-3xl font-semibold text-center text-white mb-16">
+          Our NRI Services
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {includedServices.map((service, index) => (
-                <motion.div 
-                    key={index} 
-                    className="bg-white p-8 rounded-lg border border-gray-200"
-                    initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                    <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">{service.title}</h3>
-                    <p className="text-gray-500 text-sm">{service.description}</p>
-                </motion.div>
-            ))}
+          {includedServices.map((service, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="flex items-start bg-gradient-to-br from-[#111827] to-[#0b0f19] p-6 rounded-2xl border border-white/10 shadow-lg"
+            >
+              <CheckCircle className="text-[#1dd3b0] w-6 h-6 mt-1 mr-4 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
+                <p className="text-gray-400 text-sm">{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </Section>
 
-       {/* --- Contact Form Section --- */}
-      <Section className="bg-[#F7F3EE]">
-        <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-[#2C2C2C] mb-6">Connect With Us</h2>
-            <p className="text-lg text-gray-600 mb-10">Living abroad doesn't mean you have to manage your Indian affairs alone. Contact us today for seamless legal support.</p>
-            <motion.div 
-                className="bg-white p-10 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
-            >
-                <form className="space-y-5">
-                    <input type="text" placeholder="Your Name" className="w-full p-4 border border-gray-300 rounded-md" />
-                    <input type="email" placeholder="Your Email" className="w-full p-4 border border-gray-300 rounded-md" />
-                    <textarea placeholder="Briefly describe your legal needs in India" rows={5} className="w-full p-4 border border-gray-300 rounded-md"></textarea>
-                    <button type="submit" className="w-full bg-[#B8860B] text-white p-4 rounded-md font-bold text-lg hover:bg-opacity-90">Contact Us Today!</button>
-                </form>
-            </motion.div>
+      {/* --- Contact Form Section --- */}
+      <Section className="bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19] text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold text-white mb-4">Connect With Us</h2>
+          <p className="text-gray-400 text-lg mb-10">
+            Living abroad doesn't mean you have to manage your Indian affairs alone.
+            Contact us today for seamless legal support.
+          </p>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href="/contact"
+            className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
+          >
+            Contact Us Today!
+          </motion.a>
         </div>
       </Section>
     </div>

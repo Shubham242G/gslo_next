@@ -1,221 +1,133 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
-import { Gavel, Shield, Scale } from "lucide-react";
-import Image from "next/image";
-import { JSX } from "react";
+import { Shield, Gavel, Scale } from "lucide-react";
 
-// --- Reusable Section Wrapper ---
-const Section = ({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <section className={`py-20 md:py-28 ${className}`}>
-    <div className="max-w-6xl mx-auto px-8">{children}</div>
-  </section>
-);
-
-export default function CriminalLitigationPage(): JSX.Element {
-  const whyChooseUsItems = [
-    {
-      icon: Gavel,
-      title: "Strategic Defense Planning",
-      description:
-        "We meticulously analyze evidence to build a robust defense strategy tailored to your case.",
-    },
-    {
-      icon: Shield,
-      title: "Aggressive Courtroom Representation",
-      description:
-        "Our experienced litigators are formidable advocates in the courtroom, protecting your rights.",
-    },
-    {
-      icon: Scale,
-      title: "Bail and Anticipatory Bail Expertise",
-      description:
-        "We have a strong track record in securing timely bail for our clients.",
-    },
-  ];
-
-  const includedServices = [
-    {
-      title: "Bail & Anticipatory Bail",
-      description: "Securing your freedom at the earliest opportunity.",
-    },
-    {
-      title: "Evidence Analysis",
-      description: "Meticulous review of evidence to build a strong defense.",
-    },
-    {
-      title: "Cybercrime Defense",
-      description: "Navigating the complexities of digital-age criminal law.",
-    },
-    {
-      title: "Criminal Appeals",
-      description: "Challenging convictions and seeking justice at higher courts.",
-    },
-    {
-      title: "White-Collar Crime",
-      description: "Defending allegations of financial and corporate fraud.",
-    },
-    {
-      title: "Domestic Violence Defense",
-      description: "Handling sensitive cases with discretion and expertise.",
-    },
-  ];
-
-  // Reusable animation helpers
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, delay },
-  });
-
+const CriminalLitigationPage = () => {
   return (
-    <div className="bg-[#0b0f19] text-gray-100 font-sans">
-      {/* --- Hero Section (fixed animation) --- */}
-      <Section>
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          {/* Image */}
-          <motion.div
-            className="relative h-[500px] rounded-2xl overflow-hidden border border-white/10 shadow-xl"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* <Image
-              src="https://images.unsplash.com/photo-1605664042212-75b85c35c344?w=1600&q=80&auto=format&fit=crop"
-              alt="Gavel and law books symbolizing justice"
-              fill
-              className="object-cover"
-              priority
-            /> */}
-          </motion.div>
-
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            <p className="text-[#1dd3b0] font-medium mb-4">
-              A GSLO Practice Area
-            </p>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Criminal Law & Litigation
-            </h1>
-            <p className="text-lg text-gray-400">
-              Facing criminal charges requires a proactive and strategic defense. Our team provides robust representation to protect your freedom and your future.
-            </p>
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* --- Why Choose GSLO --- */}
-      <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">
-        <motion.h2
-          {...fadeUp()}
-          className="text-4xl font-semibold text-center text-white mb-16"
+    <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-semibold text-white mb-6 leading-tight"
         >
-          Why Partner with GSLO?
-        </motion.h2>
+          Defending Rights, <br /> Delivering Justice.
+        </motion.h1>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          Our Criminal Litigation team provides strategic defense and
+          courtroom advocacy — ensuring every client’s rights are protected
+          with precision and integrity.
+        </p>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-12 text-center">
-          {whyChooseUsItems.map((item, index) => (
-            <motion.div
-              key={index}
-              {...fadeUp(index * 0.15)}
-              className="p-8 rounded-2xl bg-gradient-to-br from-[#1a2238] to-[#0b0f19] border border-white/10 hover:shadow-lg transition"
+      {/* Intro Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-4 text-white">
+            Strong Defense for Every Case
+          </h2>
+          <p className="text-gray-400">
+            Whether facing accusations or seeking justice, our team combines
+            deep legal acumen with a client-first approach. We manage
+            everything — from investigations to appeals — ensuring you receive
+            the strongest defense possible.
+          </p>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-[#0b0f19]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          {[
+            { value: "15+", label: "Years of Legal Experience" },
+            { value: "92%", label: "Success in Major Cases" },
+            { value: "1000+", label: "Clients Represented" },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-gradient-to-br from-[#1a2238] to-[#0b0f19] border border-white/10 rounded-2xl py-10"
             >
-              <div className="w-16 h-16 bg-[#1dd3b0]/10 text-[#1dd3b0] rounded-full flex items-center justify-center mx-auto mb-6">
-                <item.icon className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-semibold text-white mb-2">
-                {item.title}
+              <h3 className="text-4xl font-bold text-white mb-2">
+                {item.value}
               </h3>
-              <p className="text-gray-400">{item.description}</p>
-            </motion.div>
+              <p className="text-gray-400">{item.label}</p>
+            </div>
           ))}
         </div>
-      </Section>
+      </section>
 
-      {/* --- Services Included --- */}
-      <Section className="bg-[#0b0f19]">
-        <motion.h2
-          {...fadeUp()}
-          className="text-4xl font-semibold text-center text-white mb-16"
-        >
-          Our Criminal Defense Services
-        </motion.h2>
+      {/* Core Services Section */}
+      <section className="bg-[#0b0f19] py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold text-white text-center mb-12">
+            Our Core Criminal Defense Services
+          </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {includedServices.map((service, index) => (
-            <motion.div
-              key={index}
-              {...fadeUp(index * 0.1)}
-              className="bg-gradient-to-br from-[#111827] to-[#0b0f19] p-8 rounded-xl border border-white/10 shadow-md hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-400 text-sm">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* --- Contact Form --- */}
-      <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.h2
-            {...fadeUp()}
-            className="text-4xl font-semibold text-white mb-6"
-          >
-            Request a Confidential Case Evaluation
-          </motion.h2>
-
-          <motion.p
-            {...fadeUp(0.1)}
-            className="text-lg text-gray-400 mb-10"
-          >
-            Your privacy is our priority. Contact us for a confidential
-            consultation to discuss your case.
-          </motion.p>
-
-          <motion.div
-            {...fadeUp(0.2)}
-            className="bg-gradient-to-br from-[#1a2238] to-[#0b0f19] p-10 rounded-2xl border border-white/10 shadow-lg"
-          >
-            <form className="space-y-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-4 bg-[#0b0f19] border border-white/20 rounded-md text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1dd3b0]"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full p-4 bg-[#0b0f19] border border-white/20 rounded-md text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1dd3b0]"
-              />
-              <textarea
-                placeholder="Briefly and confidentially describe your case"
-                rows={5}
-                className="w-full p-4 bg-[#0b0f19] border border-white/20 rounded-md text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1dd3b0]"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-[#1dd3b0] text-[#0b0f19] p-4 rounded-md font-semibold text-lg hover:shadow-lg transition"
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              {
+                icon: Gavel,
+                title: "Bail & Anticipatory Bail",
+                desc: "Assisting clients in securing bail and ensuring freedom during ongoing investigations.",
+              },
+              {
+                icon: Shield,
+                title: "Courtroom Representation",
+                desc: "Providing assertive and ethical representation in all criminal courts across jurisdictions.",
+              },
+              {
+                icon: Scale,
+                title: "Evidence Analysis & Case Strategy",
+                desc: "Careful examination of facts and evidence to construct a strong, well-structured defense.",
+              },
+              {
+                icon: Shield,
+                title: "White-Collar & Cybercrime Defense",
+                desc: "Expert defense for financial fraud, cybercrime, and corporate criminal allegations.",
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex items-start bg-gradient-to-br from-[#111827] to-[#0b0f19] p-6 rounded-2xl border border-white/10 shadow-lg"
               >
-                Submit Confidential Request
-              </button>
-            </form>
-          </motion.div>
+                <item.icon className="text-[#1dd3b0] w-6 h-6 mt-1 mr-4" />
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 text-center bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+        <h2 className="text-3xl font-semibold text-white mb-4">
+          Facing Criminal Charges or Legal Threats?
+        </h2>
+        <p className="text-gray-400 max-w-xl mx-auto mb-8">
+          Contact our defense experts for a confidential consultation. We’ll
+          evaluate your case, guide you through your options, and defend your
+          rights with precision.
+        </p>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          href="/contact"
+          className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
+        >
+          Get Legal Assistance
+        </motion.a>
+      </section>
     </div>
   );
-}
+};
+
+export default CriminalLitigationPage;

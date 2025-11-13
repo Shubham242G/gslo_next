@@ -98,27 +98,23 @@ export default function IntroSection(): JSX.Element {
 
       {/* Right Side - Circular Image with Video */}
       <motion.div
-  className="flex-1 flex justify-center items-center"
-  variants={imageVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
->
-  <div className="relative">
-    {/* Circular Video Container */}
-    <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden shadow-2xl bg-black">
-      <video
-        src="/assets/panning.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        aria-label="Law Office Library"
-        className="object-cover w-full h-full"
-      />
-    </div>
-  </div>
-</motion.div>
+                  className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <video
+                    src="/assets/panning.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-label="Consumer law background"
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#080c20]/60 to-transparent" />
+                </motion.div>
 
 
       {/* Sidebar Text (Building Trust) */}
