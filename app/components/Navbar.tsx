@@ -71,7 +71,7 @@ export default function Navbar(): JSX.Element {
           transition={{ delay: 0.3, duration: 0.6, ease: 'backOut' }}
         >
           <Link href="/">
-            <img src='/assets/gslo-white.png' className='w-16 sm:ml-43 lg:mr-43' alt='company-logo'/> 
+            <img src='/assets/gslo-white.png' className='w-22 sm:ml-43 lg:mr-43' alt='company-logo'/> 
           </Link>
         </motion.div>
 

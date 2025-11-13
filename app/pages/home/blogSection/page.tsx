@@ -28,11 +28,10 @@ export default function BlogSection(): JSX.Element {
   };
 
   const clients: Client[] = [
-    { name: 'Indian Bar Association', logo: '/images/clients/client-1.png' },
-    { name: 'Biofoot', logo: '/images/clients/client-2.png' },
-    { name: 'Medical Council of India', logo: '/images/clients/client-3.png' },
-    { name: 'Care at Home', logo: '/images/clients/client-4.png' },
-    { name: 'Healthcare Services', logo: '/images/clients/client-5.png' },
+    { name: 'Biofoot', logo: '/assets/brand3.png' },
+    { name: 'JROP DIAGNOSTICS', logo: '/assets/brand4.png' },
+    { name: 'ANTARA', logo: '/assets/brand5.png' },
+    { name: 'INDIAN RADIOLOGY AND IMAGING ASSOCIATION', logo: '/assets/brand1.png' },
   ];
 
   const duplicatedClients = [...clients, ...clients];
@@ -64,7 +63,7 @@ export default function BlogSection(): JSX.Element {
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-[#050713] to-[#03050d] text-white flex flex-col items-center justify-center px-4 md:px-16 py-24">
-      
+
       {/* --- Our Clients Section --- */}
       <div className="w-full max-w-[1400px] mx-auto">
         <motion.div
@@ -99,7 +98,7 @@ export default function BlogSection(): JSX.Element {
             {duplicatedClients.map((client: Client, index: number) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[200px] h-[100px] relative grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="flex-shrink-0 w-[280px] h-[140px] relative grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
               >
                 <Image
                   src={client.logo}

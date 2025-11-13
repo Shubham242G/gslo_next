@@ -12,7 +12,6 @@ export default function Footer(): JSX.Element {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription
     console.log('Newsletter subscription:', email);
     setEmail('');
   };
@@ -24,92 +23,79 @@ export default function Footer(): JSX.Element {
     { name: 'CONTACT', href: '/contact' },
   ];
 
-  const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: FaXTwitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-  ];
-
   return (
-    <footer className="bg-gradient-to-b from-[#03050d] to-[#020206] text-white">
-      <div className="max-w-[1400px] mx-auto px-16 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left Side - Company Info */}
-          <div className="space-y-8">
-            {/* Logo */}
-            <img src='/assets/gslo-white.png' className='w-16' alt='company-logo'/> 
-          
-            {/* Navigation Links */}
-            <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-300 text-sm font-light tracking-wide hover:text-white transition-colors duration-300 w-fit"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
+    <footer className="bg-gradient-to-b from-[#03050d] to-[#020206] text-white py-12 px-8 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-5">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    <Icon size={20} />
-                  </a>
-                );
-              })}
+        {/* Left: Offices + Contact + Social Icons */}
+        <div className="space-y-8">
+
+          {/* Contact */}
+          <div className="space-y-2 text-[#b88b6c] text-lg">
+            <div className="flex items-center gap-3">
+              <img src="/assets/Call.png" alt="phone" className="h-[18px] w-[20px]" />
+              <span className="text-white text-xl font-medium">+91-9266877791</span>
             </div>
-
-            {/* Address and Contact */}
-            <div className="space-y-2">
-              <p className="text-gray-300 text-sm font-light">
-                Terry Francine Street, San Francisco, CA 94158
-              </p>
-              <p className="text-gray-300 text-sm font-light">
-                info@mysite.com | 123-456-7890
-              </p>
-            </div>
-
-            {/* Legal Links */}
-            <div className="flex gap-8">
-              <Link
-                href="/privacy"
-                className="text-gray-400 text-xs font-light hover:text-white transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/accessibility"
-                className="text-gray-400 text-xs font-light hover:text-white transition-colors duration-300"
-              >
-                Accessibility Statement
-              </Link>
+            <div className="flex items-center gap-3">
+              <img src="/assets/Message.png" alt="email" className="h-[18px] w-[20px]" />
+              <span className="text-white text-xl font-medium">info@unsaathi.com</span>
             </div>
           </div>
+          {/* Offices */}
+          <div>
+            <h2 className="text-white font-semibold mb-4 text-lg">Our Offices</h2>
+            <ul className="text-gray-300 text-sm space-y-2">
+              <li><span className="font-semibold text-white">Delhi:</span> Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand, Najafgarh, New Delhi - 110043</li>
+              <li><span className="font-semibold text-white">Noida:</span> 208-209, Tower-E, Alphathum, Noida-201305</li>
+              <li><span className="font-semibold text-white">Bhopal:</span> 401, B-Block HIG, Vijay Stambh, Zone-1, MP Nagar, Bhopal-462011</li>
+              <li><span className="font-semibold text-white">Gurgaon:</span> 412, Emaar Colonande, Golf Course Extension Rd, Sec-66, Gurgaon-122018</li>
+              <li><span className="font-semibold text-white">Indore:</span> 205, B-Block, The One, RNT Marg, Near High Court, Indore-452001</li>
+            </ul>
+          </div>
 
-          {/* Right Side - Newsletter Signup */}
-          <div className="flex flex-col justify-start">
-            <h3 className="text-3xl font-light mb-8 tracking-wide">
-              Stay Updated with the Latest
-            </h3>
 
+          {/* Social Icons */}
+          <div className="flex items-center gap-5 text-gray-300 mt-6">
+            <a href="https://www.linkedin.com/company/unsaathi" aria-label="LinkedIn" className="hover:text-white transition-colors duration-300">
+              <Linkedin size={24} />
+            </a>
+            <a href="https://www.instagram.com/official_unsaathi" aria-label="Instagram" className="hover:text-white transition-colors duration-300">
+              <Instagram size={24} />
+            </a>
+            <a href="https://www.facebook.com/share/1AmiCrdNcR/" aria-label="Facebook" className="hover:text-[#3b5998] mt-1 transition-colors duration-300">
+              <Facebook size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Navigation + Newsletter */}
+        <div className="flex gap-10">
+          {/* Navigation Links */}
+          <nav className="flex flex-col gap-2 flex-1 text-gray-300 text-sm font-light">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="w-fit hover:text-white transition-colors duration-300"
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <span className="mt-4 font-semibold text-white">Additional Links</span>
+            <Link href="/" className="w-fit hover:text-white transition-colors duration-300">Home</Link>
+            <Link href="/AboutUs" className="w-fit hover:text-white transition-colors duration-300">About Unsaathi</Link>
+            <Link href="/whyUnsaathi" className="w-fit hover:text-white transition-colors duration-300">Why Us</Link>
+            <Link href="/howUnsaathi" className="w-fit hover:text-white transition-colors duration-300">How Unsaathi Works</Link>
+            <Link href="/connect_With_Us" className="w-fit hover:text-white transition-colors duration-300">Contact Us</Link>
+          </nav>
+
+          {/* Newsletter */}
+          <div className="flex flex-col flex-1">
+            <h3 className="text-white text-xl font-light mb-6">Stay Updated with the Latest</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Email Input */}
               <div>
-                <label htmlFor="email" className="block text-sm mb-3 text-gray-300">
-                  Email *
-                </label>
+                <label htmlFor="email" className="block text-sm mb-3 text-gray-300">Email *</label>
                 <input
                   type="email"
                   id="email"
@@ -117,11 +103,9 @@ export default function Footer(): JSX.Element {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full bg-transparent border-b border-gray-500 py-3 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors duration-300"
-                  placeholder=""
                 />
               </div>
 
-              {/* Checkbox */}
               <div className="flex items-start gap-3">
                 <input
                   type="checkbox"
@@ -132,7 +116,6 @@ export default function Footer(): JSX.Element {
                 />
               </div>
 
-              {/* Submit Button */}
               <motion.button
                 type="submit"
                 className="w-full max-w-xs px-8 py-3 border border-white rounded-full text-white font-light text-sm tracking-wide hover:bg-white hover:text-[#0a1f0a] transition-all duration-300"
@@ -144,13 +127,11 @@ export default function Footer(): JSX.Element {
             </form>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-700">
-          <p className="text-gray-400 text-xs font-light text-right">
-            © 2025 by GSLO.
-          </p>
-        </div>
+      {/* Copyright */}
+      <div className="mt-12 pt-6 border-t border-gray-700 text-gray-400 text-xs text-center">
+        Unsaathi © 2023, All Rights Reserved
       </div>
     </footer>
   );

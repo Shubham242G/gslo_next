@@ -106,36 +106,17 @@ export default function IntroSection(): JSX.Element {
       >
         <div className="relative">
           {/* Circular Image Container */}
-          <div className="relative w-[500px] h-[500px] rounded-full overflow-hidden shadow-2xl">
-            <Image
-              src="/images/law-books.jpg"
-              alt="Law Office Library"
-              fill
-              className="object-cover"
-            />
-            
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-              <motion.button
-                className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Play video"
-              >
-                <Play size={32} className="text-[#0a0e27] ml-1" fill="#0a0e27" />
-              </motion.button>
-            </div>
-          </div>
-
-          {/* Sound Icon - Bottom Right */}
-          <motion.button
-            className="absolute -bottom-4 -right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Toggle sound"
-          >
-            <Volume2 size={24} className="text-[#0a0e27]" />
-          </motion.button>
+          <div className="relative w-[660px] h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-black">
+        <video
+          src="/assets/panning.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Law Office Library"
+          className="object-fill w-full h-full"
+        />
+    </div>
         </div>
       </motion.div>
 
