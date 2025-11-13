@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Mail, MapPin, Check } from 'lucide-react';
+import { ArrowRight, Phone, Mail, MapPin, Check, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { JSX } from 'react';
@@ -31,6 +31,23 @@ const founder = {
 
 
 export default function AboutUsPage(): JSX.Element {
+
+    const teamMembers = [
+  {
+    name: 'Jane Doe',
+    title: 'Senior Partner, Corporate Law',
+    imageUrl: '/assets/anusha.jpg', // **REPLACE THIS**
+    summary: 'Jane is a leading expert in M&A and corporate restructuring. Her sharp legal mind has been instrumental in our most significant transactions.',
+    linkedinUrl: 'https://www.linkedin.com/in/jane-doe-67890/', // **REPLACE THIS**
+  },
+  {
+    name: 'John Smith',
+    title: 'Partner, Criminal Litigation',
+    imageUrl: '/assets/laxman.jpg', // **REPLACE THIS**
+    summary: 'John is a formidable presence in the courtroom, known for his aggressive defense strategies and unwavering commitment to protecting his clients\' rights.',
+    linkedinUrl: 'https://www.linkedin.com/in/john-smith-11223/', // **REPLACE THIS**
+  },
+];
   
   // Data for the page sections
   const stats = [
@@ -163,6 +180,85 @@ export default function AboutUsPage(): JSX.Element {
       </div>
     </section>
 
+{/* --- Redesigned Meet The Team Section --- */}
+      <section className="bg-transparent py-24">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    {/* Heading */}
+    <motion.h2
+      className="text-5xl md:text-6xl font-light tracking-wide text-white mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      Meet Our Experts
+    </motion.h2>
+
+    {/* Cards Wrapper */}
+    <motion.div
+      className="flex flex-wrap justify-center gap-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.2,
+          },
+        },
+      }}
+    >
+      {teamMembers.map((member, index) => (
+        <motion.div
+          key={index}
+          className="relative group w-full sm:w-[400px] md:w-[420px] h-[480px] rounded-2xl overflow-hidden shadow-2xl"
+          variants={{
+            hidden: { opacity: 0, y: 30, scale: 0.98 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                duration: 0.6,
+                ease: 'easeOut',
+              },
+            },
+          }}
+          whileHover={{ y: -8, scale: 1.02 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+        >
+          <Image
+            src={member.imageUrl}
+            alt={`Portrait of ${member.name}`}
+            fill
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+          {/* Hover Content */}
+          <div className="absolute inset-0 p-6 text-left flex flex-col justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70">
+            <h3 className="text-2xl font-semibold text-white">{member.name}</h3>
+            <p className="text-md text-[#B8860B] mb-4">{member.title}</p>
+            <p className="text-gray-300 text-sm font-light leading-relaxed mb-4">
+              {member.summary}
+            </p>
+            <a
+              href={member.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#B8860B] transition-colors mt-auto"
+            >
+              Connect on LinkedIn <Linkedin size={16} />
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
 
 

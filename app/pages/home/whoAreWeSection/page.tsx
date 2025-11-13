@@ -24,30 +24,18 @@ const whyChooseUsItems = [
   },
 ];
 
-// --- Data for Team Members ---
-const teamMembers = [
-  {
-    name: 'Gaurav Sharma',
-    title: 'Founder & Managing Partner',
-    imageUrl: '/assets/founder.webp', // **REPLACE THIS**
-    summary: 'Gaurav is the visionary founder of GSLO. With over a decade of experience, he provides strategic counsel to a diverse range of clients.',
-    linkedinUrl: 'https://www.linkedin.com/in/gaurav-sharma-12345/', // **REPLACE THIS**
-  },
-  {
-    name: 'Jane Doe',
-    title: 'Senior Partner, Corporate Law',
-    imageUrl: '/assets/anusha.jpg', // **REPLACE THIS**
-    summary: 'Jane is a leading expert in M&A and corporate restructuring. Her sharp legal mind has been instrumental in our most significant transactions.',
-    linkedinUrl: 'https://www.linkedin.com/in/jane-doe-67890/', // **REPLACE THIS**
-  },
-  {
-    name: 'John Smith',
-    title: 'Partner, Criminal Litigation',
-    imageUrl: '/assets/laxman.jpg', // **REPLACE THIS**
-    summary: 'John is a formidable presence in the courtroom, known for his aggressive defense strategies and unwavering commitment to protecting his clients\' rights.',
-    linkedinUrl: 'https://www.linkedin.com/in/john-smith-11223/', // **REPLACE THIS**
-  },
-];
+
+const founder = { 
+    name: "Gaurav Sharma", 
+    title: "Founder & Managing Partner", 
+    imageUrl: "/assets/founder.webp",
+    bio: [
+      "Gaurav Sharma established GSLO with a vision to create a law firm that combines deep legal expertise with a genuine commitment to client success. With over 17 years of experience, he has earned a reputation as a formidable litigator and a trusted advisor.",
+      "His practice focuses on complex corporate litigation and advisory, but his passion lies in building lasting relationships with clients and mentoring the next generation of legal talent at the firm."
+    ]
+  };
+
+
 
 // --- Main Component ---
 export default function AboutPage(): JSX.Element {
@@ -178,83 +166,44 @@ export default function AboutPage(): JSX.Element {
       </section>
       
       {/* --- Redesigned Meet The Team Section --- */}
-      <section className="bg-transparent py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-5xl md:text-6xl font-light tracking-wide text-white mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            Meet Our Experts
-          </motion.h2>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.2,
-                  delayChildren: 0.2,
-                },
-              },
-            }}
-          >
-            {teamMembers.map((member, index) => (
+      <section className="text-white py-24 px-4 md:px-16">
+            <div className="max-w-5xl mx-auto">
+              
               <motion.div
-                key={index}
-                className="relative group w-full h-[480px] rounded-2xl overflow-hidden shadow-2xl"
-                variants={{
-                  hidden: { opacity: 0, y: 30, scale: 0.98 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: {
-                      duration: 0.6,
-                      ease: 'easeOut',
-                    },
-                  },
-                }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                className="grid md:grid-cols-2 gap-16 items-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
               >
-                <Image
-                  src={member.imageUrl}
-                  alt={`Portrait of ${member.name}`}
-                  fill
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                
-                {/* --- Hover Content starting from the top --- */}
-                <div className="absolute inset-0 p-6 text-left flex flex-col justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70">
-                  <h3 className="text-2xl font-semibold text-white">{member.name}</h3>
-                  <p className="text-md text-[#B8860B] mb-4">{member.title}</p>
-                  <p className="text-gray-300 text-sm font-light leading-relaxed mb-4">
-                    {member.summary}
-                  </p>
-                  <a
-                    href={member.linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#B8860B] transition-colors mt-auto"
-                  >
-                    Connect on LinkedIn <Linkedin size={16} />
-                  </a>
+                {/* --- Founder Image --- */}
+                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+                  <Image
+                    src={founder.imageUrl}
+                    alt={founder.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-
+      
+                {/* --- Founder Details --- */}
+                <div className="text-left">
+                  <h2 className="text-5xl md:text-6xl font-light tracking-wide mb-4">
+                    Meet Our Founder
+                  </h2>
+                  <h3 className="text-3xl font-semibold text-white mb-2">{founder.name}</h3>
+                  <p className="text-lg text-gray-400 mb-8">{founder.title}</p>
+                  <div className="space-y-4 text-gray-300 font-light leading-relaxed">
+                    {founder.bio.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+                
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      
+            </div>
+          </section>
     </div>
   );
 }
