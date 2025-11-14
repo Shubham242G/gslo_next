@@ -43,10 +43,10 @@ export default function HeroSection(): JSX.Element {
             transition={{ duration: 0.8 }}
             className="flex flex-col justify-center items-center w-full"
           >
-            <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4 max-w-xl">
+            <h1 className="text-7xl sm:text-7xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-4 max-w-xl">
               Your legal ally
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300 font-light max-w-xl leading-snug">
+            <p className="text-lg sm:text-lg md:text-lg text-gray-300 font-light max-w-xl leading-snug">
               Decades of expertise. Dedicated to justice.
             </p>
           </motion.div>

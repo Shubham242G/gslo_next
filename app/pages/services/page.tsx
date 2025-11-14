@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { JSX } from 'react';
 
 interface Service {
@@ -130,64 +129,75 @@ export default function ServicesPage(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 to-black text-white">
-      {/* Hero Section */}
-      <section className="relative bg-black pt-48 pb-32 px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          <motion.h1
-            className="text-5xl md:text-7xl font-light tracking-tight text-white"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Areas of Expertise
-          </motion.h1>
-          <motion.p
-            className="text-lg text-gray-300 max-w-2xl mx-auto mt-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            We provide comprehensive legal services across a wide range of practice areas, ensuring expert guidance for every legal challenge.
-          </motion.p>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0e27] to-[#050610] text-white relative">
+      {/* Background Image with Much Higher Visibility */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 z-0"
+        style={{ 
+          backgroundImage: "url('/assets/healthcare-back.jpg')",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e27]/50 via-[#0a0e27]/60 to-[#050610]/70 z-0" />
 
-      {/* Services Grid */}
-      <section className="py-16 px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {services.map((service: Service, index: number) => (
-              <Link href={`/pages/services/${service.slug}`} key={index}>
-                <motion.div
-                  className="group relative bg-gray-900 border-2 border-gray-700 rounded-lg p-8 h-full hover:border-white hover:shadow-2xl transition-all duration-300 overflow-hidden"
-                  
-                  whileHover={{ y: -5 }}
-                >
-                  <h3 className="text-2xl font-normal text-white mb-4 tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                    {service.description}
-                  </p>
-                  <div className="inline-flex items-center gap-2 text-sm text-white font-normal group-hover:gap-3 transition-all">
-                    <span className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                    View Detail
-                    </span>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="relative pt-48 pb-32 px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            <motion.h1
+              className="text-5xl md:text-7xl font-light tracking-tight text-white"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Our Areas of Expertise
+            </motion.h1>
+            <motion.p
+              className="text-lg text-gray-300 max-w-2xl mx-auto mt-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              We provide comprehensive legal services across a wide range of practice areas, ensuring expert guidance for every legal challenge.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-16 px-8 pb-24">
+          <div className="max-w-[1400px] mx-auto">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {services.map((service: Service, index: number) => (
+                <Link href={`/pages/services/${service.slug}`} key={index}>
+                  <motion.div
+                    className="group relative bg-[#0d1133]/40 backdrop-blur-sm border-2 border-gray-700/50 rounded-lg p-8 h-full hover:border-white/50 hover:bg-[#0d1133]/60 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                    whileHover={{ y: -5 }}
+                  >
+                    <h3 className="text-2xl font-normal text-white mb-4 tracking-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                      {service.description}
+                    </p>
+                    <div className="inline-flex items-center gap-2 text-sm text-white font-normal group-hover:gap-3 transition-all">
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                        View Detail
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

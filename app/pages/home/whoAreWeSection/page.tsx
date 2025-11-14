@@ -75,16 +75,11 @@ export default function AboutPage(): JSX.Element {
             }}
           >
             <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover rounded-md"
-              >
-                <source src="/assets/transition.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <img
+  src="/assets/transition.gif"
+  alt="transition"
+  className="absolute inset-0 w-[500px] h-[580px] object-cover rounded-md"
+/>
             </div>
           </motion.div>
 
@@ -104,7 +99,7 @@ export default function AboutPage(): JSX.Element {
               },
             }}
           >
-            <h2 className="text-5xl md:text-6xl font-light tracking-wide text-white">
+            <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white">
               Who We Are
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl">
@@ -147,7 +142,7 @@ export default function AboutPage(): JSX.Element {
               },
             }}
           >
-            <h2 className="text-4xl md:text-5xl font-light tracking-wide text-white mb-16">
+            <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white mb-16">
               Why Choose GSLO?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -188,10 +183,10 @@ export default function AboutPage(): JSX.Element {
       
                 {/* --- Founder Details --- */}
                 <div className="text-left">
-                  <h2 className="text-5xl md:text-6xl font-light tracking-wide mb-4">
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide mb-4">
                     Meet Our Founder
                   </h2>
-                  <h3 className="text-3xl font-semibold text-white mb-2">{founder.name}</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-2">{founder.name}</h3>
                   <p className="text-lg text-gray-400 mb-8">{founder.title}</p>
                   <div className="space-y-4 text-gray-300 font-light leading-relaxed">
                     {founder.bio.map((paragraph, index) => (

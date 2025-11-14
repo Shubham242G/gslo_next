@@ -1,177 +1,152 @@
-"use client";
-import { motion } from "framer-motion";
-import { Briefcase, Milestone, HandCoins, CheckCircle } from "lucide-react";
+'use client';
 
-export default function DebtRecoveryPage() {
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Plus, Minus } from 'lucide-react';
+import Link from 'next/link';
+import { useState, JSX } from 'react';
+
+export default function FamilyLawPage(): JSX.Element {
+
   const whyChooseUsItems = [
-    {
-      icon: Briefcase,
-      title: "Customized Recovery Strategies",
-      description:
-        "Tailored debt recovery plans based on debtor history and business dynamics.",
-    },
-    {
-      icon: Milestone,
-      title: "High Success Rate",
-      description:
-        "Our firm has a proven record of recovering debts across diverse industries.",
-    },
-    {
-      icon: HandCoins,
-      title: "Pre-Litigation Expertise",
-      description:
-        "We focus on negotiation and settlement before resorting to litigation.",
-    },
+    { title: "Client-Centric Approach", description: "Our focus is on your needs, ensuring personalized and empathetic guidance." },
+    { title: "Proven Track Record", description: "A history of successful outcomes and satisfied clients in complex family law cases." },
+    { title: "Holistic Legal Solutions", description: "We consider all aspects of your situation to provide comprehensive legal strategies." },
+    { title: "Experienced Legal Expertise", description: "Decades of combined experience in all facets of family law litigation and negotiation." },
   ];
 
   const includedServices = [
-    {
-      title: "Debt Assessment & Strategy",
-      desc: "Analyzing the debt case and structuring an effective recovery plan.",
-    },
-    {
-      title: "Legal Proceedings",
-      desc: "Initiating civil suits or insolvency petitions where required.",
-    },
-    {
-      title: "Negotiation and Settlement",
-      desc: "Resolving disputes through strategic mediation and dialogue.",
-    },
-    {
-      title: "Tracing and Asset Recovery",
-      desc: "Identifying debtor assets and enforcing recovery judgments.",
-    },
-    {
-      title: "Insolvency Petitions",
-      desc: "Leveraging the IBC framework for recovering corporate debts.",
-    },
-    {
-      title: "Enforcement of Decrees",
-      desc: "Ensuring court decrees are fully executed and payments are secured.",
-    },
+    { title: "Divorce and Separation" },
+    { title: "Property Division" },
+    { title: "Child Custody and Support" },
+    { title: "Spousal Maintenance" },
+    { title: "Adoption" },
+    { title: "Domestic Violence" },
   ];
 
+  const faqs = [
+    { question: "What are the first steps in a divorce case?", answer: "The first step is to consult with an experienced family law attorney to understand your rights and options." },
+    { question: "How is child custody determined during a divorce?", answer: "Courts determine custody based on the best interests of the child considering stability, preference, and parental involvement." },
+    { question: "Can I modify a child support or custody order?", answer: "Yes, orders can be modified if there has been a substantial change in circumstances." },
+  ];
+
+  const relatedServices = [
+    { title: "Writ Litigation", slug: "writ-litigation" },
+    { title: "Supreme Court Practice", slug: "supreme-court-practice" },
+    { title: "Debt Recovery", slug: "debt-recovery" },
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
-    <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
-      {/* Hero Section */}
+    <div className="bg-[#0b0f19] text-gray-100">
+
+      {/* HERO SECTION (Estate Planning Style) */}
       <section
-  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
-  style={{
-    backgroundImage: "url('/assets/family-law.jpg')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  }}
->
-  {/* Black overlay for darkening the background image */}
-  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+        className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-32 px-8 text-center"
+        style={{
+          backgroundImage: "url('/assets/family-law.jpg')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  {/* Keep text on top of overlay */}
-  <div className="relative z-10">
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-      style={{ lineHeight: "1.15", fontWeight: 300 }}
-    >
-      Effective Debt Recovery,
-      <br /> Ethical Legal Solutions.
-    </motion.h1>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+            style={{ lineHeight: "1.15" }}
+          >
+            Family Law Demystified:<br /> Understanding Your Rights
+          </motion.h1>
 
-    <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-      Unpaid debts can hinder growth. We provide strategic, ethical, and
-      efficient legal methods to recover what’s rightfully yours while
-      preserving professional relationships.
-    </p>
-  </div>
-</section>
-
-      {/* About Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-4 text-white">
-            Restoring Financial Stability
-          </h2>
-          <p className="text-gray-400">
-            Debt recovery requires more than legal knowledge — it demands
-            strategy and empathy. We help individuals and organizations reclaim
-            their dues through structured, transparent, and legally compliant
-            processes that protect your reputation and restore balance to your
-            finances.
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
+            Navigating the complexities of family law can be overwhelming, but our experienced team is here to clarify your options and safeguard your interests.
           </p>
+
+          {/* CTA JUST LIKE ESTATE PAGE */}
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href="/contact"
+            className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
+          >
+            Schedule a Consultation
+          </motion.a>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-[#0b0f19]">
-        <h2 className="text-3xl font-semibold text-center text-white mb-12">
-          Why Choose GSLO for Debt Recovery?
-        </h2>
+      {/* ABOUT FAMILY LAW */}
+      <section className="py-20 px-8 bg-gradient-to-b from-[#111827] to-[#0b0f19]">
+  <div className="max-w-5xl mx-auto flex justify-center items-center text-center">
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="max-w-2xl"
+    >
+      <h2 className="text-3xl font-light text-white mb-6">About Family Law</h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {whyChooseUsItems.map((item, idx) => (
+      <p className="text-gray-400 leading-relaxed mb-4">
+        Family law is a specialized field that focuses on legal issues involving family relationships, including marriage, divorce, custody, adoption, and domestic matters.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed">
+        Our approach ensures resolutions that protect your interests while minimizing emotional and financial challenges.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
+
+    
+
+      {/* SERVICES INCLUDED */}
+      <section className="py-20 px-8 bg-gradient-to-b from-[#111827] to-[#0b0f19]">
+        <h2 className="text-3xl font-light text-white text-center mb-12">Services Included</h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {includedServices.map((service, i) => (
             <motion.div
-              key={idx}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gradient-to-br from-[#111827] to-[#0b0f19] border border-white/10 rounded-2xl py-10 px-6 shadow-lg"
+              key={i}
+              className="bg-[#1a2238] p-6 rounded-xl border border-white/10 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              <item.icon className="w-10 h-10 text-[#1dd3b0] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-400">{item.description}</p>
+              <h3 className="text-lg font-semibold text-white">{service.title}</h3>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="bg-[#0b0f19] py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-white text-center mb-12">
-            Our Debt Recovery Services
-          </h2>
+      {/* RELATED SERVICES */}
+      <section className="py-20 px-8 bg-[#0b0f19]">
+        <h2 className="text-3xl font-light text-white text-center mb-12">Related Services</h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            {includedServices.map((service, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="flex items-start bg-gradient-to-br from-[#111827] to-[#0b0f19] p-6 rounded-2xl border border-white/10 shadow-lg"
-              >
-                <CheckCircle className="text-[#1dd3b0] w-6 h-6 mt-1 mr-4" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400">{service.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {relatedServices.map((service, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#111827] p-8 rounded-xl border border-white/10 hover:shadow-xl transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+              <Link href={`/services/${service.slug}`} className="text-[#1dd3b0] font-semibold hover:underline">
+                Learn More
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 text-center bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19]">
-        <h2 className="text-3xl font-semibold text-white mb-4">
-          Begin Your Debt Recovery Journey Today
-        </h2>
-        <p className="text-gray-400 max-w-xl mx-auto mb-8">
-          Don’t let unpaid debts block your business growth. Connect with our
-          experts to design a recovery strategy that’s efficient and ethical.
-        </p>
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          href="/contact"
-          className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
-        >
-          Request a Consultation
-        </motion.a>
-      </section>
     </div>
   );
 }

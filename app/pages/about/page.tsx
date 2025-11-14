@@ -51,7 +51,7 @@ export default function AboutUsPage(): JSX.Element {
   
   // Data for the page sections
   const stats = [
-    { value: "17", label: "Years of Legal Experience", },
+    { value: "17+", label: "Years of Legal Experience", },
     { value: "98%", label: "Client Success Rate" },
     { value: "20+", label: "Areas of Law Expertise" },
   ];
@@ -73,22 +73,61 @@ export default function AboutUsPage(): JSX.Element {
     <div className="bg-gradient-to-b from-gray-800 to-black text-white">
       
       {/* Hero Section */}
-      <section className="relative bg-black pt-48 pb-32 text-center overflow-hidden">
-        <div className="max-w-6xl mx-auto px-8">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-            >
-                <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight">
-                    Your Objectives,<br/>Our Purpose.
-                </h1>
-                <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-                    Customized legal services from a renowned law firm dedicated to simplifying complexities and achieving your goals.
-                </p>
-            </motion.div>
-        </div>
-      </section>
+      <section
+  className="relative bg-black pt-48 pb-40 text-center overflow-hidden"
+  style={{
+    backgroundImage: "url('/assets/about-us.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/60 z-0"></div>
+
+  <div className="relative z-10 max-w-6xl mx-auto px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight">
+        Your Objectives,<br />Our Purpose.
+      </h1>
+
+      <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-10">
+        Customized legal services from a renowned law firm dedicated to 
+        simplifying complexities and achieving your goals.
+      </p>
+
+      {/* CTA Button */}
+      <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2, duration: 0.7 }}
+>
+  <Link
+    href="/pages/contactUs"
+    className="
+      inline-block px-8 py-3 
+      border border-white/40 
+      text-white text-lg 
+      rounded-full 
+      backdrop-blur-sm
+      transition-all duration-300 
+      hover:border-white 
+      hover:bg-white/10 
+      hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
+    "
+  >
+    Book a Consultation
+  </Link>
+</motion.div>
+
+    </motion.div>
+  </div>
+</section>
+
+
 
       {/* Firm Overview & Stats */}
       <Section>
