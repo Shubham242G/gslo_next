@@ -69,20 +69,36 @@ export default function StartupAdvisoryPage(): JSX.Element {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* --- Hero Section --- */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-          style={{ lineHeight: '1.15', fontWeight: 300 }}
-        >
-          Startup Legal Advisory
-        </motion.h1>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          From incorporation to investment, we are the legal co-pilots for ambitious founders. Let us handle the legal complexities, so you can focus on building your vision.
-        </p>
-      </section>
+      <section
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-35 px-6 text-center"
+  style={{
+    backgroundImage: "url('/assets/startup-advisory.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      Startup Legal Advisory
+    </motion.h1>
+    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+      From incorporation to investment, we are the legal co-pilots for ambitious founders. Let us handle the legal complexities, so you can focus on building your vision.
+    </p>
+  </div>
+</section>
+
+
 
       {/* --- Why Choose GSLO --- */}
       <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">

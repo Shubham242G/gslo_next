@@ -56,25 +56,37 @@ export default function IntellectualPropertyPage() {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-  <motion.h1
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7 }}
-    className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-    style={{
-      lineHeight: "1.15",
-      fontWeight: 300,
-    }}
-  >
-    NCLT & Corporate Law<br />
-    Strategic Insolvency & Dispute Solutions
-  </motion.h1>
+      <section
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+  style={{
+    backgroundImage: "url('/assets/intellectual-law.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black shade overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
 
-  <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-    We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
-  </p>
+  {/* Content above overlay */}
+  <div className="relative z-10 max-w-2xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      NCLT & Corporate Law<br />
+      Strategic Insolvency & Dispute Solutions
+    </motion.h1>
+
+    <p className="text-gray-400 text-lg">
+      We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
+    </p>
+  </div>
 </section>
+
 
 
       {/* Why Choose Us Section */}

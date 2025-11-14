@@ -1,152 +1,101 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Globe, Home, Briefcase, CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
-// --- Reusable Section Component ---
-const Section = ({
-  children,
-  className = '',
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <section className={`py-20 md:py-28 ${className}`}>
-    <div className="max-w-6xl mx-auto px-8">{children}</div>
-  </section>
-);
-
-export default function NRIServicesPage(): JSX.Element {
-  const whyChooseUsItems = [
-    {
-      icon: Globe,
-      title: 'Expertise in International and Indian Legal Frameworks',
-      description:
-        'We have a comprehensive knowledge of both Indian and international legal systems, providing holistic and efficient provisions for our NRI clients.',
-    },
-    {
-      icon: Briefcase,
-      title: 'Personalized Legal Solutions',
-      description:
-        'We recognize that all NRIs face their own unique legal challenges. Our specialized team delivers easy-to-understand advice and tailor-made solutions.',
-    },
-    {
-      icon: Home,
-      title: 'Seamless Global Legal Representation',
-      description:
-        'Our efficient representation is achieved across several jurisdictions, both in India and abroad, delivering assistance to NRIs as speedily as possible.',
-    },
-  ];
-
-  const includedServices = [
-    {
-      title: 'Property Transactions and Management',
-      description:
-        'GSLO is committed to facilitating property transactions for NRIs, such as acquisition, sale, leasing, and management, under Indian law.',
-    },
-    {
-      title: 'Succession Planning and Will Drafting',
-      description:
-        'The concept of estate planning is popular with NRIs. GSLO understands this and therefore guides NRIs on this important matter.',
-    },
-    {
-      title: 'Investment and Financial Guidance',
-      description:
-        'We provide strategic advice on investment in Indian markets, including stocks, bonds, and real estate, along with tax planning.',
-    },
-  ];
-
+const DebtRecoveryPage = (): JSX.Element => {
   return (
-    <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
-      {/* --- Hero Section --- */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
+    <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
+      {/* Hero Section */}
+      <section
+  className="relative py-28 px-6 text-center flex flex-col justify-center items-center min-h-[90vh]"
+  style={{
+    backgroundImage: "url('/assets/debt-recovery.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+
+  {/* Content on top of overlay */}
+  <div className="relative z-10 max-w-2xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      NCLT & Corporate Law<br />
+      Strategic Insolvency & Dispute Solutions
+    </motion.h1>
+
+    <p className="text-gray-400 text-lg">
+      We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
+    </p>
+  </div>
+</section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">
         <div className="max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-            style={{
-              lineHeight: '1.15',
-              fontWeight: 300,
-            }}
-          >
-            Seamless Legal Support for NRIs
-            <br /> Protecting Your Interests in India
-          </motion.h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            At GSLO, we help Non-Resident Indians (NRIs) navigate legal, property,
-            and financial matters in India—providing smart, customized solutions to
-            safeguard your rights and interests no matter where you live.
+          <h2 className="text-3xl font-light mb-4 text-white">
+            About Debt Recovery
+          </h2>
+          <p className="text-gray-400 leading-relaxed">
+            Debt recovery involves the legal process of collecting outstanding
+            payments from individuals or businesses. A structured legal approach
+            is essential to ensure creditors reclaim funds efficiently and
+            lawfully. Our firm specializes in both commercial and individual
+            debt recovery, maintaining the highest ethical standards to protect
+            your reputation.
           </p>
         </div>
       </section>
 
-      {/* --- Why Choose GSLO --- */}
-      <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">
-        <h2 className="text-3xl font-semibold text-center text-white mb-16">
-          Why Choose GSLO for NRI Services?
-        </h2>
-        <div className="grid md:grid-cols-3 gap-12 text-center">
-          {whyChooseUsItems.map((item, idx) => (
-            <motion.div
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-[#0b0f19] border-t border-white/10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          {[
+            { value: '95%', label: 'Debt Recovery Success Rate' },
+            { value: '10+', label: 'Years of Legal Expertise' },
+            { value: '1000+', label: 'Cases Resolved Ethically' },
+          ].map((item, idx) => (
+            <div
               key={idx}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="flex flex-col items-center bg-gradient-to-br from-[#1a2238] to-[#0b0f19] p-8 rounded-2xl border border-white/10 shadow-lg"
+              className="bg-gradient-to-br from-[#1a2238] to-[#0b0f19] border border-white/10 rounded-2xl py-10"
             >
-              <div className="bg-[#1dd3b0]/10 p-4 rounded-full mb-5">
-                <item.icon className="w-10 h-10 text-[#1dd3b0]" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.description}</p>
-            </motion.div>
+              <h3 className="text-4xl font-bold text-white mb-2">
+                {item.value}
+              </h3>
+              <p className="text-gray-400">{item.label}</p>
+            </div>
           ))}
         </div>
-      </Section>
+      </section>
 
-      {/* --- Services Included --- */}
-      <Section>
-        <h2 className="text-3xl font-semibold text-center text-white mb-16">
-          Our NRI Services
+      {/* CTA Section */}
+      <section className="py-24 text-center bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+        <h2 className="text-3xl font-semibold text-white mb-4">
+          Need Legal Assistance for Debt Recovery?
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {includedServices.map((service, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="flex items-start bg-gradient-to-br from-[#111827] to-[#0b0f19] p-6 rounded-2xl border border-white/10 shadow-lg"
-            >
-              <CheckCircle className="text-[#1dd3b0] w-6 h-6 mt-1 mr-4 flex-shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm">{service.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* --- Contact Form Section --- */}
-      <Section className="bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19] text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-semibold text-white mb-4">Connect With Us</h2>
-          <p className="text-gray-400 text-lg mb-10">
-            Living abroad doesn't mean you have to manage your Indian affairs alone.
-            Contact us today for seamless legal support.
-          </p>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            href="/contact"
-            className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
-          >
-            Contact Us Today!
-          </motion.a>
-        </div>
-      </Section>
+        <p className="text-gray-400 max-w-xl mx-auto mb-8">
+          Our expert legal team helps businesses and individuals recover debts
+          efficiently while maintaining professionalism and compliance.
+        </p>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          href="/contact"
+          className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
+        >
+          Contact Us
+        </motion.a>
+      </section>
     </div>
   );
-}
+};
+
+export default DebtRecoveryPage;

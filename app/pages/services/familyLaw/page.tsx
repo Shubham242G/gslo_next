@@ -54,24 +54,38 @@ export default function DebtRecoveryPage() {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-          style={{ lineHeight: "1.15", fontWeight: 300 }}
-        >
-          Effective Debt Recovery,
-          <br /> Ethical Legal Solutions.
-        </motion.h1>
+      <section
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+  style={{
+    backgroundImage: "url('/assets/family-law.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay for darkening the background image */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          Unpaid debts can hinder growth. We provide strategic, ethical, and
-          efficient legal methods to recover what’s rightfully yours while
-          preserving professional relationships.
-        </p>
-      </section>
+  {/* Keep text on top of overlay */}
+  <div className="relative z-10">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      Effective Debt Recovery,
+      <br /> Ethical Legal Solutions.
+    </motion.h1>
+
+    <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+      Unpaid debts can hinder growth. We provide strategic, ethical, and
+      efficient legal methods to recover what’s rightfully yours while
+      preserving professional relationships.
+    </p>
+  </div>
+</section>
 
       {/* About Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">

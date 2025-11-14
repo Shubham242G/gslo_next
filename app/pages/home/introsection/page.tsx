@@ -98,23 +98,25 @@ export default function IntroSection(): JSX.Element {
 
       {/* Right Side - Circular Image with Video */}
       <motion.div
-                  className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <video
-                    src="/assets/panning.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    aria-label="Consumer law background"
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#080c20]/60 to-transparent" />
-                </motion.div>
+        className="min-h-screen bg-gradient-to-b from-gray-900 rounded-full overflow-hidden flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <video
+          src="/assets/panning.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Consumer law background"
+          className="w-full h-full object-cover bg-gradient-to-b from-gray-900"
+        />
+      </motion.div>
+
+
+
 
 
       {/* Sidebar Text (Building Trust) */}

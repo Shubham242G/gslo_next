@@ -7,21 +7,35 @@ const CriminalLitigationPage = () => {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-semibold text-white mb-6 leading-tight"
-        >
-          Defending Rights, <br /> Delivering Justice.
-        </motion.h1>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          Our Criminal Litigation team provides strategic defense and
-          courtroom advocacy — ensuring every client’s rights are protected
-          with precision and integrity.
-        </p>
-      </section>
+      <section
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+  style={{
+    backgroundImage: "url('/assets/criminal-litigation.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay for shade */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+
+  {/* Content on top */}
+  <div className="relative z-10">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-6xl font-semibold text-white mb-6 leading-tight"
+    >
+      Defending Rights, <br /> Delivering Justice.
+    </motion.h1>
+    <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+      Our Criminal Litigation team provides strategic defense and
+      courtroom advocacy — ensuring every client’s rights are protected
+      with precision and integrity.
+    </p>
+  </div>
+</section>
 
       {/* Intro Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">

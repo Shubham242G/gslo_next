@@ -37,24 +37,37 @@ export default function NCLTPage(): JSX.Element {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* --- Hero Section --- */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-  <motion.h1
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-    style={{ lineHeight: "1.15", fontWeight: 300 }}
-  >
-    Effective Debt Recovery,
-    <br /> Ethical Legal Solutions.
-  </motion.h1>
+      <section
+  className="relative py-30 px-6 text-center flex flex-col justify-center items-center min-h-[60vh]"
+  style={{
+    backgroundImage: "url('/assets/nclt.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-    Unpaid debts can hinder growth. We provide strategic, ethical, and
-    efficient legal methods to recover what’s rightfully yours while
-    preserving professional relationships.
-  </p>
+  {/* Content on top of overlay */}
+  <div className="relative z-10 max-w-2xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      NCLT & Corporate Law<br />
+      Strategic Insolvency & Dispute Solutions
+    </motion.h1>
+
+    <p className="text-gray-400 text-lg">
+      We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
+    </p>
+  </div>
 </section>
+
 
 
       {/* --- Why Choose Us --- */}

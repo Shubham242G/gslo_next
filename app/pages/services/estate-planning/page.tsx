@@ -7,26 +7,36 @@ const EstatePlanningPage = () => {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-          style={{
-            lineHeight: "1.15",
-            fontWeight: 300,
-          }}
-        >
-          Secure Your Legacy,
-          <br /> Plan Your Estate with Confidence.
-        </motion.h1>
+      <section
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+  style={{
+    backgroundImage: "url('/assets/estate-planning.jpg')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}
+>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          Expert estate planning and succession solutions to protect your
-          family’s wealth, reduce disputes, and ensure smooth legacy transfer.
-        </p>
-      </section>
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+      style={{ lineHeight: "1.15", fontWeight: 300 }}
+    >
+      Secure Your Legacy,<br /> Plan Your Estate with Confidence.
+    </motion.h1>
+    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+      Expert estate planning and succession solutions to protect your
+      family’s wealth, reduce disputes, and ensure smooth legacy transfer.
+    </p>
+  </div>
+</section>
+
 
       {/* Intro Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">

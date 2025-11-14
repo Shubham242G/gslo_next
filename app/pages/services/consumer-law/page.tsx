@@ -10,7 +10,7 @@ const ConsumerLawPage = () => {
       <section
   className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
   style={{
-    backgroundImage: "url('/assets/service.jpg')",
+    backgroundImage: "url('/assets/consumer-law.jpg')",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
