@@ -97,7 +97,7 @@ export default function RERACompliancePage(): JSX.Element {
     <p className="text-white max-w-2xl mx-auto text-lg">
       For developers, investors, and homebuyers, navigating the complexities of real estate regulations is critical. Full compliance with RERA promotes transparency, accountability, and legal security.
     </p>
-    <Link href="/pages/contact-us">
+    <Link href="/pages/contactUs">
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
                 Contact Us
               </button>
@@ -163,7 +163,7 @@ export default function RERACompliancePage(): JSX.Element {
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="/contact"
+            href="/pages/contactUs"
             className="inline-block bg-[#B8860B] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
           >
             Request a RERA Consultation

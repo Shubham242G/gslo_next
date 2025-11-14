@@ -178,7 +178,7 @@ export default function HospitalityLawPage(): JSX.Element {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-              <Link href={`/pages/services/${service.slug}`} className="text-[#1dd3b0] font-semibold hover:underline inline-flex items-center gap-2">
+              <Link href={`/pages/contactUs`} className="text-[#1dd3b0] font-semibold hover:underline inline-flex items-center gap-2">
                 Learn More <ArrowRight size={16} />
               </Link>
             </motion.div>

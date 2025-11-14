@@ -104,7 +104,7 @@ export default function IntroSection(): JSX.Element {
       >
         <div className="bg-white relative w-[400px] h-[400px] rounded-full overflow-hidden">
           <video
-            src="/assets/panning.mp4"
+            src="https://ik.imagekit.io/f3plnz4hj/panning.mp4?updatedAt=1763148886280"
             autoPlay
             loop
             muted

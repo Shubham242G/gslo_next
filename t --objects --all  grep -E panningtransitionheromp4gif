@@ -1,0 +1,36 @@
+[33mcommit 65943d6f0f6d30c9c9e5900b85dd0957ced14207[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Shubham242G <allhailvicky242@@gmail.com>
+Date:   Fri Nov 14 22:32:25 2025 +0530
+
+    Move large media files to LFS
+
+ public/assets/about-us.jpg            | Bin [31m157076[m -> [32m131[m bytes
+ public/assets/anusha.jpg              | Bin [31m219418[m -> [32m131[m bytes
+ public/assets/brand1.png              | Bin [31m46186[m -> [32m130[m bytes
+ public/assets/brand3.png              | Bin [31m14445[m -> [32m130[m bytes
+ public/assets/brand4.png              | Bin [31m25697[m -> [32m130[m bytes
+ public/assets/brand5.png              | Bin [31m17414[m -> [32m130[m bytes
+ public/assets/consumer-law.jpg        | Bin [31m193490[m -> [32m131[m bytes
+ public/assets/contact.jpg             | Bin [31m236237[m -> [32m131[m bytes
+ public/assets/criminal-litigation.jpg | Bin [31m100390[m -> [32m131[m bytes
+ public/assets/debt-recovery.jpg       | Bin [31m274254[m -> [32m131[m bytes
+ public/assets/estate-planning.jpg     | Bin [31m203516[m -> [32m131[m bytes
+ public/assets/family-law.jpg          | Bin [31m206552[m -> [32m131[m bytes
+ public/assets/founder.webp            | Bin [31m26142[m -> [32m130[m bytes
+ public/assets/gslo-white.png          | Bin [31m18173[m -> [32m130[m bytes
+ public/assets/healthcare-back.jpg     | Bin [31m2431539[m -> [32m132[m bytes
+ public/assets/heroBanner.jpg          | Bin [31m229397[m -> [32m131[m bytes
+ public/assets/hospital.jpg            | Bin [31m367825[m -> [32m131[m bytes
+ public/assets/intellectual-law.jpg    | Bin [31m213623[m -> [32m131[m bytes
+ public/assets/labour-law.jpg          | Bin [31m166198[m -> [32m131[m bytes
+ public/assets/laxman.jpg              | Bin [31m243389[m -> [32m131[m bytes
+ public/assets/nclt.jpg                | Bin [31m178138[m -> [32m131[m bytes
+ public/assets/nri.jpg                 | Bin [31m192099[m -> [32m131[m bytes
+ public/assets/property-law.jpg        | Bin [31m200853[m -> [32m131[m bytes
+ public/assets/rera-compliance.jpg     | Bin [31m217904[m -> [32m131[m bytes
+ public/assets/service.jpg             | Bin [31m188654[m -> [32m131[m bytes
+ public/assets/startup-advisory.jpg    | Bin [31m233711[m -> [32m131[m bytes
+ public/assets/supreme-court.jpg       | Bin [31m446142[m -> [32m131[m bytes
+ public/assets/the_team.jpg            | Bin [31m8412317[m -> [32m132[m bytes
+ public/assets/writ.jpg                | Bin [31m163184[m -> [32m131[m bytes
+ 29 files changed, 0 insertions(+), 0 deletions(-)

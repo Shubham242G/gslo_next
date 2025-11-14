@@ -78,7 +78,7 @@ export default function SupremeCourtPage(): JSX.Element {
     <p className="text-white max-w-2xl mx-auto text-lg">
       GSLO Supreme Court Practice is an unparalleled asset of legal representation at the Supreme Court of India, the highest court of the land and the highest judicial forum in India.
     </p>
-    <Link href="/pages/contact-us">
+    <Link href="/pages/contactUs">
 
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
                 Contact Us
@@ -154,9 +154,12 @@ export default function SupremeCourtPage(): JSX.Element {
               <input type="text" placeholder="Your Name" className="w-full p-4 border border-gray-700 rounded-md bg-[#0b0f19] text-gray-100" />
               <input type="email" placeholder="Your Email" className="w-full p-4 border border-gray-700 rounded-md bg-[#0b0f19] text-gray-100" />
               <textarea placeholder="Briefly describe your case and its history" rows={5} className="w-full p-4 border border-gray-700 rounded-md bg-[#0b0f19] text-gray-100"></textarea>
-              <button type="submit" className="w-full bg-[#B8860B] text-[#0b0f19] p-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition">
-                Request a Supreme Court Case Consultation
+              <Link href="/pages/contactUs">
+
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
               </button>
+            </Link>
             </form>
           </motion.div>
         </div>

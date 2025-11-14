@@ -73,7 +73,11 @@ export default function FamilyLawPage(): JSX.Element {
             href="/contact"
             className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
           >
-            Schedule a Consultation
+            <Link href="/pages/contactUs">
+              <button className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition">
+                Connect with Us
+              </button>
+            </Link>
           </motion.a>
         </div>
       </section>
@@ -139,7 +143,7 @@ export default function FamilyLawPage(): JSX.Element {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-              <Link href={`/services/${service.slug}`} className="text-[#1dd3b0] font-semibold hover:underline">
+              <Link href={`/pages/contactUs`} className="text-[#1dd3b0] font-semibold hover:underline">
                 Learn More
               </Link>
             </motion.div>

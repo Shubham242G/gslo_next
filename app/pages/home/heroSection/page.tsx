@@ -16,7 +16,7 @@ export default function HeroSection(): JSX.Element {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/assets/hero.mp4" type="video/mp4" />
+          <source src="https://ik.imagekit.io/f3plnz4hj/hero.mp4?updatedAt=1763148853428" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/60" />

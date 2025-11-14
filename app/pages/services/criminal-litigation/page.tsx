@@ -35,7 +35,7 @@ const CriminalLitigationPage = () => {
       courtroom advocacy — ensuring every client’s rights are protected
       with precision and integrity.
     </p>
-    <Link href="/pages/contact-us">
+    <Link href="/pages/contactUs">
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
                 Contact Us
               </button>
@@ -140,7 +140,7 @@ const CriminalLitigationPage = () => {
         </p>
         <motion.a
           whileHover={{ scale: 1.05 }}
-          href="/contact"
+          href="/pages/contactUs"
           className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
         >
           Get Legal Assistance

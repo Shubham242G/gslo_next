@@ -76,7 +76,7 @@ export default function AboutPage(): JSX.Element {
           >
             <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
               <img
-  src="/assets/transition.gif"
+  src="https://ik.imagekit.io/f3plnz4hj/transition-min.gif?updatedAt=1763149088476"
   alt="transition"
   className="absolute inset-0 w-[500px] h-[580px] object-cover rounded-md"
 />

@@ -96,7 +96,7 @@ export default function WritLitigationPage(): JSX.Element {
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
       Writ Litigation is a prominent legal provision seeking justice against unlawful actions of authorities. We secure speedy judicial accountability in High Courts and Supreme Court to protect individual and corporate rights.
     </p>
-    <Link href="/pages/contact-us">
+    <Link href="/pages/contactUs">
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
                 Contact Us
               </button>
@@ -181,12 +181,12 @@ export default function WritLitigationPage(): JSX.Element {
                 rows={5}
                 className="w-full p-4 border border-gray-700 rounded-md bg-[#0b0f19] text-gray-100"
               ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-[#B8860B] text-[#0b0f19] p-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition"
-              >
-                Secure Your Rights!
+              <Link href="/pages/contactUs">
+
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
               </button>
+            </Link>
             </form>
           </motion.div>
         </div>

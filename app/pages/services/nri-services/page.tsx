@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Globe, Home, Briefcase, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
 // --- Reusable Section Component ---
@@ -89,6 +90,11 @@ export default function NRIServicesPage(): JSX.Element {
       and financial matters in India—providing smart, customized solutions to
       safeguard your rights and interests no matter where you live.
     </p>
+    <Link href="/pages/contactUs">
+              <button className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition">
+                Connect with Us
+              </button>
+            </Link>
   </div>
 </section>
 
@@ -149,7 +155,7 @@ export default function NRIServicesPage(): JSX.Element {
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="/contact"
+            href="/pages/contactUs"
             className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
           >
             Contact Us Today!

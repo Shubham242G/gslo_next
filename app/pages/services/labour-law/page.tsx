@@ -116,7 +116,7 @@ export default function LabourLawPage(): JSX.Element {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <Link href="/pages/contact-us">
+            <Link href="/pages/contactUs">
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl">
                 Contact Us
               </button>
@@ -189,7 +189,7 @@ export default function LabourLawPage(): JSX.Element {
 
           <motion.div whileHover={{ scale: 1.05 }}>
             <Link
-              href="/pages/contact-us"
+              href="/pages/contactUs"
               className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
             >
               Request a Consultation

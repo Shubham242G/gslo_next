@@ -174,7 +174,7 @@ export default function IntellectualPropertyPage() {
 
         <motion.a
           whileHover={{ scale: 1.05 }}
-          href="/contact"
+          href="/pages/contactUs"
           className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
         >
           Request IP Consultation

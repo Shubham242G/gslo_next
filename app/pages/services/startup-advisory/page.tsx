@@ -96,7 +96,7 @@ export default function StartupAdvisoryPage(): JSX.Element {
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
       From incorporation to investment, we are the legal co-pilots for ambitious founders. Let us handle the legal complexities, so you can focus on building your vision.
     </p>
-    <Link href="/pages/contact-us">
+    <Link href="/pages/contactUs">
               <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
                 Contact Us
               </button>
@@ -161,7 +161,7 @@ export default function StartupAdvisoryPage(): JSX.Element {
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="/contact"
+            href="/pages/contactUs"
             className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
           >
             Book a Founder's Consultation
