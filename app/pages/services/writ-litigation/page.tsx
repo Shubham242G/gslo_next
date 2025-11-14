@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Shield, FileText, Landmark, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
 const Section = ({
@@ -95,6 +96,11 @@ export default function WritLitigationPage(): JSX.Element {
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
       Writ Litigation is a prominent legal provision seeking justice against unlawful actions of authorities. We secure speedy judicial accountability in High Courts and Supreme Court to protect individual and corporate rights.
     </p>
+    <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

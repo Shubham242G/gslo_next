@@ -2,13 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const ConsumerLawPage = () => {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section
-  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+      <section 
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-6 text-center"
   style={{
     backgroundImage: "url('/assets/consumer-law.jpg')",
     backgroundPosition: "center",
@@ -23,18 +24,32 @@ const ConsumerLawPage = () => {
     <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="text-4xl md:text-6xl font-light mb-6 leading-tight text-white"
-      style={{ lineHeight: "1.15", fontWeight: 300 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-6xl font-semibold text-white mb-6"
     >
-      Writ Litigation: Defending Your Fundamental Rights
+      Protecting Consumer Rights,
+      <br /> Empowering Justice.
     </motion.h1>
-    <p className="text-white max-w-2xl mx-auto text-lg">
-      Writ Litigation is a prominent legal provision seeking justice against unlawful actions of authorities. We secure speedy judicial accountability in High Courts and Supreme Court to protect individual and corporate rights.
+
+    <p className="text-white max-w-2xl mx-auto text-lg mb-8">
+      Our Consumer Law services ensure fair trade practices, protecting
+      consumers from fraud, unfair treatment, and exploitation.
     </p>
+
+    {/* Contact Us Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <Link href="/pages/contactUs">
+        <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl">
+          Contact Us
+        </button>
+      </Link>
+    </motion.div>
   </div>
 </section>
-
 
       {/* Intro Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">

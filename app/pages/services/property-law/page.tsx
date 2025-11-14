@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Home, Shield, FileText, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
 // --- Reusable Section Component ---
@@ -103,6 +104,11 @@ export default function PropertyLawPage(): JSX.Element {
       We provide expert legal assistance with property-related matters,
       ensuring your ownership and investment are shielded by comprehensive law.
     </p>
+    <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

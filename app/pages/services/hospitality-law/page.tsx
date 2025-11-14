@@ -1,166 +1,191 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Lightbulb, Globe, Copyright, CheckCircle } from "lucide-react";
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { JSX } from 'react';
 
-export default function IntellectualPropertyPage() {
+export default function HospitalityLawPage(): JSX.Element {
+
   const whyChooseUsItems = [
-    {
-      icon: Lightbulb,
-      title: "End-to-End IP Lifecycle Management",
-      description:
-        "From initial registration to enforcement and litigation, we manage the entire lifecycle of your IP assets.",
-    },
-    {
-      icon: Globe,
-      title: "Global IP Strategy",
-      description:
-        "We provide strategic advice for protecting your intellectual property not just in India, but across international jurisdictions.",
-    },
-    {
-      icon: Copyright,
-      title: "Specialized IP Litigators",
-      description:
-        "Our dedicated team of IP lawyers has extensive experience in handling complex infringement and validity disputes.",
-    },
+    { title: "Industry-Specific Expertise", description: "Deep understanding of the hospitality sector's unique legal landscape and operational challenges." },
+    { title: "Proactive Legal Strategies", description: "We anticipate issues and provide solutions that protect and grow your hospitality business." },
+    { title: "Regulatory Compliance Mastery", description: "Expert guidance through complex licensing, health codes, and safety regulations." },
+    { title: "End-to-End Support", description: "From business formation to crisis management, we handle all your legal needs." },
   ];
 
   const includedServices = [
-    {
-      title: "Patent Protection",
-      description: "Safeguarding your novel inventions and technologies.",
-    },
-    {
-      title: "Trademark Registration",
-      description: "Protecting your brand identity, logos, and slogans.",
-    },
-    {
-      title: "Copyright Protection",
-      description: "Securing rights for your creative and artistic works.",
-    },
-    {
-      title: "Trade Secret Management",
-      description:
-        "Implementing strategies to protect confidential business information.",
-    },
-    {
-      title: "IP Litigation & Dispute Resolution",
-      description: "Aggressively defending your IP rights in court.",
-    },
-    {
-      title: "Technology Transfer",
-      description: "Facilitating the legal transfer of intellectual property.",
-    },
+    { title: "Licensing and Regulatory Compliance" },
+    { title: "Contract Drafting and Review" },
+    { title: "Intellectual Property Protection" },
+    { title: "Corporate Compliance" },
+    { title: "Finance and Debt Restructuring" },
+    { title: "Hospitality Business Formation, Licenses and Renewal" },
+    { title: "Documentation for New Hotels" },
+  ];
+
+  const relatedServices = [
+    { title: "Estate Planning, Trusts and Succession Law", slug: "estate-planning" },
+    { title: "NRI Services", slug: "nri-services" },
+    { title: "Family Law", slug: "familyLaw" },
   ];
 
   return (
-    <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
-      {/* Hero Section */}
+    <div className="bg-[#0b0f19] text-gray-100">
+
+      {/* HERO SECTION */}
       <section
-  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
-  style={{
-    backgroundImage: "url('/assets/hospital.jpg')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  }}
->
-  {/* Black overlay */}
-  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+        className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-8 text-center"
+        style={{
+          backgroundImage: "url('/assets/hospital.jpg')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  {/* Content */}
-  <div className="relative z-10 max-w-4xl mx-auto">
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-      style={{ lineHeight: '1.15', fontWeight: 300 }}
-    >
-      Protect What Defines You, <br /> Secure Your Intellectual Property.
-    </motion.h1>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
+            style={{ lineHeight: "1.15" }}
+          >
+            Hospitality Law: Navigating Legal Challenges in the Industry
+          </motion.h1>
 
-    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-      Safeguard your ideas, inventions, and creative works with legal precision.
-      From trademarks to patents, we help you protect your most valuable assets.
-    </p>
-  </div>
-</section>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
+            The hospitality industry faces unique legal and regulatory challenges. Our expert team provides tailored legal solutions to ensure your business not only complies but also thrives.
+          </p>
 
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19]">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-12 text-white">
-            Our Intellectual Property Edge
-          </h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {whyChooseUsItems.map((item, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="flex flex-col items-center text-center bg-gradient-to-br from-[#1a2238] to-[#0b0f19] p-8 rounded-2xl border border-white/10 shadow-lg"
-              >
-                <div className="bg-[#1dd3b0]/10 p-4 rounded-full mb-5">
-                  <item.icon className="w-10 h-10 text-[#1dd3b0]" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <Link href="/pages/contactUs">
+              <button className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition">
+                Connect with Us
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="bg-[#0b0f19] py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-white mb-12">
-            Our Intellectual Property Services
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {includedServices.map((service, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="flex items-start bg-gradient-to-br from-[#111827] to-[#0b0f19] p-6 rounded-2xl border border-white/10 shadow-lg"
-              >
-                <CheckCircle className="text-[#1dd3b0] w-6 h-6 mt-1 mr-4 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* ABOUT HOSPITALITY LAW */}
+      <section className="py-20 px-8 bg-gradient-to-b from-[#111827] to-[#0b0f19]">
+        <div className="max-w-5xl mx-auto flex justify-center items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h2 className="text-3xl font-light text-white mb-6">About Hospitality Law</h2>
+
+            <div className="text-gray-400 leading-relaxed space-y-4 text-left">
+              <p>
+                The hospitality industry is vast—including hotels, restaurants, travel, tourism, events, and entertainment. With such diversity comes a myriad of legal challenges: from obtaining and renewing licenses to navigating health codes, employment regulations, intellectual property rights, and contracts with vendors, suppliers, and customers.
+              </p>
+
+              <p>
+                The unique nature of hospitality businesses means legal issues arise quickly and unpredictably. Whether you're launching a boutique hotel, managing a restaurant chain, or operating a tourism venture, staying compliant and protected is not just advisable—it's essential.
+              </p>
+
+              <p>
+                At GSLO, we offer end-to-end legal support tailored specifically for the hospitality sector. From business formation to daily operations, crisis response, and growth strategies, we ensure you're prepared for every scenario.
+              </p>
+
+              <div className="mt-6">
+                <h3 className="text-white font-semibold mb-3">Key Areas of Hospitality Law We Cover:</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Licensing and Permits: Navigating the maze of local, state, and federal requirements for food service, liquor licenses, tourism permits, and more.</li>
+                  <li>Health and Safety Compliance: Ensuring your operations meet stringent health codes, workplace safety standards, and fire regulations.</li>
+                  <li>Employment Law: Drafting contracts, managing disputes, handling terminations, and ensuring compliance with labor laws and wage regulations.</li>
+                  <li>Contract Management: Reviewing and negotiating agreements with vendors, suppliers, partners, and clients.</li>
+                  <li>Intellectual Property: Protecting your brand, trademarks, and unique offerings from infringement.</li>
+                  <li>Liability and Risk Management: Mitigating risks related to customer injuries, property damage, and other potential liabilities.</li>
+                  <li>Real Estate and Property Law: Guiding you through leases, property purchases, zoning laws, and construction agreements.</li>
+                  <li>Crisis and Reputation Management: Handling legal emergencies, public relations issues, and damage control efficiently.</li>
+                </ul>
+              </div>
+
+              <p className="mt-6">
+                Hospitality businesses thrive on reputation, customer satisfaction, and smooth operations. Legal complications can derail any of these critical factors. That's why having proactive legal counsel isn't just a safety net—it's a strategic advantage.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-24 text-center bg-gradient-to-t from-[#0b0f19] via-[#111827] to-[#0b0f19]">
-        <h2 className="text-3xl font-semibold text-white mb-4">
-          Protect Your Innovations Today
-        </h2>
-        <p className="text-gray-400 max-w-xl mx-auto mb-10">
-          Your ideas deserve the best legal protection. Contact our IP experts
-          to learn how we can help you safeguard your intellectual property
-          rights.
-        </p>
+      {/* WHY CHOOSE GSLO */}
+      <section className="py-20 px-8 bg-[#0b0f19]">
+        <h2 className="text-3xl font-light text-white text-center mb-12">Why Choose GSLO?</h2>
 
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          href="/contact"
-          className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
-        >
-          Request IP Consultation
-        </motion.a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {whyChooseUsItems.map((item, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#1a2238] p-6 rounded-xl border border-white/10 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
+              <p className="text-gray-400 text-sm">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </section>
+
+      {/* SERVICES INCLUDED */}
+      <section className="py-20 px-8 bg-gradient-to-b from-[#111827] to-[#0b0f19]">
+        <h2 className="text-3xl font-light text-white text-center mb-12">Services Included in Hospitality Law</h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {includedServices.map((service, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#1a2238] p-6 rounded-xl border border-white/10 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-base font-semibold text-white">{service.title}</h3>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* RELATED SERVICES */}
+      <section className="py-20 px-8 bg-[#0b0f19]">
+        <h2 className="text-3xl font-light text-white text-center mb-12">Related Services</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {relatedServices.map((service, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#111827] p-8 rounded-xl border border-white/10 hover:shadow-xl transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+              <Link href={`/pages/services/${service.slug}`} className="text-[#1dd3b0] font-semibold hover:underline inline-flex items-center gap-2">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }

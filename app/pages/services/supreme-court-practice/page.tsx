@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Scale, Landmark, FileText, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
 const Section = ({
@@ -74,9 +75,15 @@ export default function SupremeCourtPage(): JSX.Element {
     >
       Supreme Court Practice
     </motion.h1>
-    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+    <p className="text-white max-w-2xl mx-auto text-lg">
       GSLO Supreme Court Practice is an unparalleled asset of legal representation at the Supreme Court of India, the highest court of the land and the highest judicial forum in India.
     </p>
+    <Link href="/pages/contact-us">
+
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

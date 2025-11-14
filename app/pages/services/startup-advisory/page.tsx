@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Rocket, FileText, Scaling, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { JSX } from 'react';
 
 const Section = ({
@@ -95,6 +96,11 @@ export default function StartupAdvisoryPage(): JSX.Element {
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
       From incorporation to investment, we are the legal co-pilots for ambitious founders. Let us handle the legal complexities, so you can focus on building your vision.
     </p>
+    <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const EstatePlanningPage = () => {
   return (
@@ -34,6 +35,11 @@ const EstatePlanningPage = () => {
       Expert estate planning and succession solutions to protect your
       family’s wealth, reduce disputes, and ensure smooth legacy transfer.
     </p>
+    <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

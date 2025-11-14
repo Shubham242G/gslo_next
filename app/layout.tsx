@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import { JSX } from 'react';
 import Footer from './components/Footer';
+import ChatBot from './bot/bot'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         
         {/* Page content goes here */}
         {children}
+        <ChatBot/>
         <Footer/>
       </body>
     </html>

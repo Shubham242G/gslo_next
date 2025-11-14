@@ -8,8 +8,8 @@ const DebtRecoveryPage = (): JSX.Element => {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section
-  className="relative py-28 px-6 text-center flex flex-col justify-center items-center min-h-[90vh]"
+      <section 
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center flex flex-col justify-center items-center min-h-[90vh]"
   style={{
     backgroundImage: "url('/assets/debt-recovery.jpg')",
     backgroundPosition: "center",
@@ -20,24 +20,38 @@ const DebtRecoveryPage = (): JSX.Element => {
   {/* Black overlay */}
   <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  {/* Content on top of overlay */}
-  <div className="relative z-10 max-w-2xl mx-auto">
+  <div className="relative z-10 max-w-4xl mx-auto">
     <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-      style={{ lineHeight: "1.15", fontWeight: 300 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight max-w-2xl mx-auto"
     >
-      NCLT & Corporate Law<br />
-      Strategic Insolvency & Dispute Solutions
+      Effective Debt Recovery,
+      <br /> Strategic Legal Solutions.
     </motion.h1>
 
-    <p className="text-gray-400 text-lg">
-      We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
+    <p className="text-white max-w-2xl mx-auto text-base md:text-lg leading-relaxed mb-8">
+      Unpaid debts can cripple cash flow and hinder growth. We provide
+      strategic, ethical, and effective legal solutions to recover your
+      outstanding dues while preserving your professional relationships.
     </p>
+
+    {/* Contact Us Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <Link href="/pages/contactUs">
+        <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl">
+          Contact Us
+        </button>
+      </Link>
+    </motion.div>
   </div>
 </section>
+
 
       {/* About Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-[#111827] to-[#0b0f19] text-center">

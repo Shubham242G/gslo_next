@@ -43,7 +43,7 @@ export default function ContactUsPage(): JSX.Element {
                 formPlaceholders={{
                   name: "Your Name",
                   email: "Your Email",
-                  phone: "Your Phone (Optional)",
+                  phone: "Your Phone",
                   message: "How can we help you?",
                 }}
                 buttonText="Submit Your Request"

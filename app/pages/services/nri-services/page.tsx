@@ -83,7 +83,6 @@ export default function NRIServicesPage(): JSX.Element {
       style={{ lineHeight: '1.15', fontWeight: 300 }}
     >
       Seamless Legal Support for NRIs<br />
-      Protecting Your Interests in India
     </motion.h1>
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
       At GSLO, we help Non-Resident Indians (NRIs) navigate legal, property,

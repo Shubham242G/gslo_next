@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Gavel, Scale } from "lucide-react";
+import Link from "next/link";
 
 const CriminalLitigationPage = () => {
   return (
@@ -34,6 +35,11 @@ const CriminalLitigationPage = () => {
       courtroom advocacy — ensuring every client’s rights are protected
       with precision and integrity.
     </p>
+    <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl mt-8">
+                Contact Us
+              </button>
+            </Link>
   </div>
 </section>
 

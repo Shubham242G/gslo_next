@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Lightbulb, Globe, Copyright, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function IntellectualPropertyPage() {
   const whyChooseUsItems = [
@@ -56,8 +57,8 @@ export default function IntellectualPropertyPage() {
   return (
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* Hero Section */}
-      <section
-  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+      <section 
+  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-6 text-center"
   style={{
     backgroundImage: "url('/assets/intellectual-law.jpg')",
     backgroundPosition: "center",
@@ -65,28 +66,45 @@ export default function IntellectualPropertyPage() {
     backgroundSize: "cover",
   }}
 >
-  {/* Black shade overlay */}
-  <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  {/* Content above overlay */}
-  <div className="relative z-10 max-w-2xl mx-auto">
+  <div className="relative z-10 max-w-4xl mx-auto p-8 rounded-md">
     <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-      style={{ lineHeight: "1.15", fontWeight: 300 }}
+      style={{
+        lineHeight: "1.15",
+        fontWeight: 300,
+      }}
     >
-      NCLT & Corporate Law<br />
-      Strategic Insolvency & Dispute Solutions
+      Protect What Defines You,  
+      <br /> Secure Your Intellectual Property.
     </motion.h1>
 
-    <p className="text-gray-400 text-lg">
-      We provide expert navigation through the complex landscape of corporate law, insolvency, and restructuring before the National Company Law Tribunal (NCLT).
+    <p className="text-white max-w-2xl mx-auto text-lg mb-8">
+      Safeguard your ideas, inventions, and creative works with legal
+      precision. From trademarks to patents, we help you protect your most
+      valuable assets.
     </p>
+
+    {/* Contact Us Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
+    >
+      <Link href="/pages/contactUs">
+
+        <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl">
+          Contact Us
+        </button>
+      </Link>
+    </motion.div>
   </div>
 </section>
-
 
 
       {/* Why Choose Us Section */}

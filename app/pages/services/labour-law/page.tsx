@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, FileCheck, Shield, CheckCircle } from "lucide-react";
 import { JSX } from "react";
+import Link from "next/link";
 
 const Section = ({
   children,
@@ -72,34 +73,57 @@ export default function LabourLawPage(): JSX.Element {
     <div className="bg-[#0b0f19] text-gray-100 min-h-screen font-sans">
       {/* --- Hero Section --- */}
       <section
-  className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
-  style={{
-    backgroundImage: "url('/assets/labour-law.jpg')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  }}
->
-  {/* Black overlay for shade */}
-  <div className="absolute inset-0 bg-black opacity-60 z-0" />
+        className="relative bg-gradient-to-b from-[#0b0f19] via-[#111827] to-[#0b0f19] py-28 px-6 text-center"
+        style={{
+          backgroundImage: "url('/assets/labour-law.jpg')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-  {/* Content on top */}
-  <div className="relative z-10 max-w-4xl mx-auto">
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="text-4xl md:text-6xl font-light text-white mb-6 leading-tight"
-      style={{ lineHeight: "1.15", fontWeight: 300 }}
-    >
-      Secure Your Property, Protect Your Rights
-    </motion.h1>
-    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-      We provide expert legal assistance with property-related matters,
-      ensuring your ownership and investment are shielded by comprehensive law.
-    </p>
-  </div>
-</section>
+        <div className="relative z-10 max-w-4xl mx-auto p-8 rounded-md">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-[#1dd3b0] font-medium mb-4 tracking-wide uppercase text-sm"
+          >
+            A GSLO Practice Area
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-light mb-6 leading-tight text-white"
+            style={{ lineHeight: "1.15", fontWeight: 300 }}
+          >
+            Labour & Employment Law
+          </motion.h1>
+
+          <p className="text-white max-w-2xl mx-auto text-lg mb-8">
+            From contract disputes to workplace safety, we ensure the rights
+            and obligations of both employers and employees are upheld with
+            clarity and fairness.
+          </p>
+
+          {/* Contact Us Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <Link href="/pages/contact-us">
+              <button className="px-8 py-3 bg-[#1dd3b0] text-white font-semibold rounded-full hover:bg-[#17b89a] transition-all duration-300 shadow-lg hover:shadow-xl">
+                Contact Us
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* --- Why Choose Us --- */}
       <Section className="bg-gradient-to-b from-[#111827] to-[#0b0f19]">
@@ -163,13 +187,14 @@ export default function LabourLawPage(): JSX.Element {
             consultation.
           </p>
 
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            href="/contact"
-            className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
-          >
-            Request a Consultation
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              href="/pages/contact-us"
+              className="inline-block bg-[#1dd3b0] text-[#0b0f19] font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition"
+            >
+              Request a Consultation
+            </Link>
+          </motion.div>
         </div>
       </Section>
     </div>
