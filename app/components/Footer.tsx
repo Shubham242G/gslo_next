@@ -17,10 +17,10 @@ export default function Footer(): JSX.Element {
   };
 
   const navLinks = [
-    { name: 'ABOUT', href: '/about' },
-    { name: 'SOLUTIONS', href: '/services' },
-    { name: 'INSIGHTS', href: '/blogs' },
-    { name: 'CONTACT', href: '/contact' },
+    { name: 'ABOUT', href: '/pages/about' },
+    { name: 'SOLUTIONS', href: 'pages/services' },
+    // { name: 'INSIGHTS', href: '/blogs' },
+    { name: 'CONTACT', href: 'pages/contactUs' },
   ];
 
   return (
@@ -34,11 +34,11 @@ export default function Footer(): JSX.Element {
           <div className="space-y-2 text-[#b88b6c] text-lg">
             <div className="flex items-center gap-3">
               <img src="/assets/Call.png" alt="phone" className="h-[18px] w-[20px]" />
-              <span className="text-white text-xl font-medium">+91-9266877791</span>
+              <span className="text-white text-xl font-medium">+91-8595650338</span>
             </div>
             <div className="flex items-center gap-3">
               <img src="/assets/Message.png" alt="email" className="h-[18px] w-[20px]" />
-              <span className="text-white text-xl font-medium">info@unsaathi.com</span>
+              <span className="text-white text-xl font-medium">info@gslo.in</span>
             </div>
           </div>
           {/* Offices */}
@@ -84,10 +84,10 @@ export default function Footer(): JSX.Element {
 
             <span className="mt-4 font-semibold text-white">Additional Links</span>
             <Link href="/" className="w-fit hover:text-white transition-colors duration-300">Home</Link>
-            <Link href="/AboutUs" className="w-fit hover:text-white transition-colors duration-300">About Unsaathi</Link>
-            <Link href="/whyUnsaathi" className="w-fit hover:text-white transition-colors duration-300">Why Us</Link>
-            <Link href="/howUnsaathi" className="w-fit hover:text-white transition-colors duration-300">How Unsaathi Works</Link>
-            <Link href="/connect_With_Us" className="w-fit hover:text-white transition-colors duration-300">Contact Us</Link>
+            <Link href="#whoAreWe" className="w-fit hover:text-white transition-colors duration-300">About Unsaathi</Link>
+            <Link href="#whyUs" className="w-fit hover:text-white transition-colors duration-300">Why Us</Link>
+            <Link href="/pages/services" className="w-fit hover:text-white transition-colors duration-300">How Unsaathi Works</Link>
+            <Link href="/pages/contactUs" className="w-fit hover:text-white transition-colors duration-300">Contact Us</Link>
           </nav>
 
           {/* Newsletter */}
@@ -131,7 +131,7 @@ export default function Footer(): JSX.Element {
 
       {/* Copyright */}
       <div className="mt-12 pt-6 border-t border-gray-700 text-gray-400 text-xs text-center">
-        Unsaathi © 2023, All Rights Reserved
+        GSLO © 2023, All Rights Reserved
       </div>
     </footer>
   );

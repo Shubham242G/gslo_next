@@ -40,7 +40,7 @@ const founder = {
 // --- Main Component ---
 export default function AboutPage(): JSX.Element {
   return (
-    <div className="bg-gradient-to-b from-gray-700 to-gray-900">
+    <div id="whoAreWe"className="bg-gradient-to-b from-gray-700 to-gray-900" >
       {/* --- Who We Are Section --- */}
       <section className="min-h-screen bg-transparent text-white flex items-center justify-center px-8 md:px-16 py-24">
         <motion.div

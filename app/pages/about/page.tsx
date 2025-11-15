@@ -34,18 +34,18 @@ export default function AboutUsPage(): JSX.Element {
 
     const teamMembers = [
   {
-    name: 'Jane Doe',
+    name: 'Anusha Girish',
     title: 'Senior Partner, Corporate Law',
-    imageUrl: '/assets/anusha.jpg', // **REPLACE THIS**
-    summary: 'Jane is a leading expert in M&A and corporate restructuring. Her sharp legal mind has been instrumental in our most significant transactions.',
-    linkedinUrl: 'https://www.linkedin.com/in/jane-doe-67890/', // **REPLACE THIS**
+    imageUrl: '/assets/anusha.jpg', 
+    summary: 'Distinguished advocate with a sharp legal mind and strong commitment to justice. Graduated from Delhi University with an LLB, she fiercely advocates for clients rights, earning a reputation as a formidable legal expert',
+    linkedinUrl: 'https://www.linkedin.com/in/jane-doe-67890/', 
   },
   {
-    name: 'John Smith',
+    name: 'Laxman Kumar',
     title: 'Partner, Criminal Litigation',
-    imageUrl: '/assets/laxman.jpg', // **REPLACE THIS**
-    summary: 'John is a formidable presence in the courtroom, known for his aggressive defense strategies and unwavering commitment to protecting his clients\' rights.',
-    linkedinUrl: 'https://www.linkedin.com/in/john-smith-11223/', // **REPLACE THIS**
+    imageUrl: '/assets/laxman.jpg', 
+    summary: 'With a sharp legal mind and a strong commitment to justice. He graduated from Delhi University with an LLB and is a dedicated advocate for his clients rights in the courtroom. His relentless pursuit of favorable outcomes for his clients has earned him a reputation as a formidable legal advocate.',
+    linkedinUrl: 'https://www.linkedin.com/in/john-smith-11223/',
   },
 ];
   
@@ -73,14 +73,18 @@ export default function AboutUsPage(): JSX.Element {
     <div className="bg-gradient-to-b from-gray-800 to-black text-white">
       
       {/* Hero Section */}
-      <section
-  className="relative bg-black pt-48 pb-40 text-center overflow-hidden"
-  style={{
-    backgroundImage: "url('/assets/about-us.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
+      <section className="relative bg-black pt-48 pb-40 text-center overflow-hidden">
+  
+  {/* VIDEO BACKGROUND */}
+  <video
+    className="absolute inset-0 w-full h-full object-cover z-0"
+    src="https://ik.imagekit.io/f3plnz4hj/hero.mp4?updatedAt=1763148853428"
+    autoPlay
+    loop
+    muted
+    playsInline
+  ></video>
+
   {/* Dark Overlay */}
   <div className="absolute inset-0 bg-black/60 z-0"></div>
 
@@ -101,31 +105,32 @@ export default function AboutUsPage(): JSX.Element {
 
       {/* CTA Button */}
       <motion.div
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2, duration: 0.7 }}
->
-  <Link
-    href="/pages/contactUs"
-    className="
-      inline-block px-8 py-3 
-      border border-white/40 
-      text-white text-lg 
-      rounded-full 
-      backdrop-blur-sm
-      transition-all duration-300 
-      hover:border-white 
-      hover:bg-white/10 
-      hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
-    "
-  >
-    Book a Consultation
-  </Link>
-</motion.div>
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.7 }}
+      >
+        <Link
+          href="/pages/contactUs"
+          className="
+            inline-block px-8 py-3 
+            border border-white/40 
+            text-white text-lg 
+            rounded-full 
+            backdrop-blur-sm
+            transition-all duration-300 
+            hover:border-white 
+            hover:bg-white/10 
+            hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
+          "
+        >
+          Book a Consultation
+        </Link>
+      </motion.div>
 
     </motion.div>
   </div>
 </section>
+
 
 
 
