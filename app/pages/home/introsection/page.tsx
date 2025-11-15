@@ -77,7 +77,7 @@ export default function IntroSection(): JSX.Element {
         <div className="space-y-6">
           {services.map((service: Service, index: number) => (
             
-            <Link href={`/pages/services/${service.slug}`} key={index} className='block w-full'> 
+            <Link href={`/pages/services${service.slug}`} key={index} className='block w-full'> 
               {/* ✅ Only change: wrapped the service in a link */}
 
               <motion.div
