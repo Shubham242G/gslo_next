@@ -84,9 +84,9 @@ export default function Footer(): JSX.Element {
 
             <span className="mt-4 font-semibold text-white">Additional Links</span>
             <Link href="/" className="w-fit hover:text-white transition-colors duration-300">Home</Link>
-            <Link href="#whoAreWe" className="w-fit hover:text-white transition-colors duration-300">About Unsaathi</Link>
+            <Link href="#whoAreWe" className="w-fit hover:text-white transition-colors duration-300">About GSLO</Link>
             <Link href="#whyUs" className="w-fit hover:text-white transition-colors duration-300">Why Us</Link>
-            <Link href="/pages/services" className="w-fit hover:text-white transition-colors duration-300">How Unsaathi Works</Link>
+            <Link href="/pages/services" className="w-fit hover:text-white transition-colors duration-300">How GSLO Works</Link>
             <Link href="/pages/contactUs" className="w-fit hover:text-white transition-colors duration-300">Contact Us</Link>
           </nav>
 
