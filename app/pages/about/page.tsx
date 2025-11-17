@@ -234,6 +234,7 @@ export default function AboutUsPage(): JSX.Element {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
+      id='meetTheTeam'
     >
       Meet Our Experts
     </motion.h2>

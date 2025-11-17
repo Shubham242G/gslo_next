@@ -11,10 +11,10 @@ interface Service {
 
 export default function IntroSection(): JSX.Element {
   const services: Service[] = [
-    { name: 'Hospitality Law', slug: '/hospitality-law' },
-    { name: 'Family Law', slug: '/familyLaw' },
-    { name: 'Intellectual Property Rights', slug: '/intellectual-property' },
     { name: 'Criminal Litigation', slug: '/criminal-litigation' },
+    { name: 'Intellectual Property Rights', slug: '/intellectual-property' },
+    { name: 'Family Law', slug: '/familyLaw' },
+    { name: 'Hospitality Law', slug: '/hospitality-law' },
     { name: 'Consumer Law', slug: '/consumer-law' },
   ];
 

@@ -32,7 +32,7 @@ export default function HeroSection(): JSX.Element {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Gaurav Sharma law offices
+            Gaurav Sharma Law Offices
           </motion.p>
 
           {/* Main Heading and Subtext */}
@@ -46,7 +46,7 @@ export default function HeroSection(): JSX.Element {
             <h1 className="text-7xl sm:text-7xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-4 max-w-xl">
               Your legal ally
             </h1>
-            <p className="text-lg sm:text-lg md:text-lg text-gray-300 font-light max-w-xl leading-snug">
+            <p className="text-lg sm:text-lg md:text-lg text-gray-300 font-light tracking-wider max-w-xl leading-snug">
               Decades of expertise. Dedicated to justice.
             </p>
           </motion.div>
@@ -58,7 +58,8 @@ export default function HeroSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-6"
           >
-            <motion.button
+            <motion.a
+              href="/pages/contactUs"
               className="group flex items-center gap-3 px-6 py-2 border border-white rounded-full text-white font-light text-sm tracking-wide hover:bg-white hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -67,7 +68,7 @@ export default function HeroSection(): JSX.Element {
               <motion.div className="transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight size={18} />
               </motion.div>
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </div>
