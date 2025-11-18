@@ -2,11 +2,11 @@
 
 import { motion, Variants } from 'framer-motion';
 import { JSX } from 'react';
-import Link from 'next/link';   // ✅ Added
+import Link from 'next/link';
 
 interface Service {
   name: string;
-  slug: string;  // ✅ Added
+  slug: string;
 }
 
 export default function IntroSection(): JSX.Element {
@@ -76,10 +76,7 @@ export default function IntroSection(): JSX.Element {
 
         <div className="space-y-6">
           {services.map((service: Service, index: number) => (
-            
             <Link href={`/pages/services${service.slug}`} key={index} className='block w-full'> 
-              {/* ✅ Only change: wrapped the service in a link */}
-
               <motion.div
                 className="flex items-center gap-4 group cursor-pointer"
                 variants={itemVariants}
@@ -97,10 +94,29 @@ export default function IntroSection(): JSX.Element {
                   {service.name}
                 </span>
               </motion.div>
-
             </Link>
           ))}
         </div>
+
+        {/* ✅ CTA Button Added Here */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-12"
+        >
+          <Link href="/pages/services/">
+            <motion.button
+              className="px-8 py-3 border-2 border-white text-white font-light tracking-wider uppercase text-sm hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore More Services 
+            </motion.button>
+          </Link>
+        </motion.div>
+
       </motion.div>
 
       {/* Right Side - Circular Video Container */}
