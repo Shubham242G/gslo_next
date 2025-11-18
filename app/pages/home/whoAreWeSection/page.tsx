@@ -33,7 +33,7 @@ const founder = {
   imageUrl: '/assets/founder.webp',
   bio: [
     'Gaurav Sharma established GSLO with a vision to create a law firm that combines deep legal expertise with a genuine commitment to client success. With over 17 years of experience, he has earned a reputation as a formidable litigator and a trusted advisor.',
-    'His practice focuses on complex corporate litigation and advisory, but his passion lies in building lasting relationships with clients and mentoring the next generation of legal talent at the firm.',
+    'His practice focuses on complex litigation and advisory, but his passion lies in building lasting relationships with clients and mentoring the next generation of legal talent at the firm.',
   ],
 };
 

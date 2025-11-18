@@ -73,7 +73,12 @@
   padding: 18px;
   font-size: 15px;
   color: #e2e8f0;
+  max-height: calc(480px - 48px); /* Total height minus header */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
+
 
 /* Question text */
 .bot-question {
@@ -110,31 +115,39 @@
   color: #64748b;
 }
 
-/* Options */
 .bot-options {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-height: 0; /* Critical for flex child overflow */
+  padding-right: 4px; /* Space for scrollbar */
 }
+
+
 
 .bot-option-btn {
-  background: #1e293b;
-  border: 1.6px solid rgba(30, 58, 138, 0.8);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #0a0e27;
   cursor: pointer;
-  color: #e2e8f0;
-  font-weight: 500;
-  transition: .2s;
+  text-align: left;
+  transition: all 0.2s;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
-.bot-option-btn.active,
 .bot-option-btn:hover {
-  background: linear-gradient(135deg, #2563eb, #1e3a8a);
-  color: white !important;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4);
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.bot-option-btn.active {
+  background: #0a0e27;
+  color: white;
+  border-color: #0a0e27;
 }
 
 /* Buttons */
@@ -150,7 +163,18 @@
   transition: 0.25s;
   cursor: pointer;
 }
+.bot-options::-webkit-scrollbar {
+  width: 6px;
+}
 
+.bot-options::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+.bot-options::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+}
 /* Primary button */
 .bot-btn-primary {
   background: linear-gradient(135deg, #2563eb, #1e3a8a);
@@ -222,4 +246,5 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-height: 0; /* Critical for nested scroll */
 }
