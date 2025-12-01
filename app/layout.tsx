@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'GSLO - Gaurav Sharma Law Offices',
   description: 'Professional legal services including Healthcare Law, Family Law, IPR, Criminal Litigation, and Consumer Law',
+  icons: {
+    icon: "/assets/GSLO-black.png",
+  },
 };
 
 export default function RootLayout({
