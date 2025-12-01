@@ -8,9 +8,11 @@ export default function DisclaimerModal() {
   const [isChecked, setIsChecked] = useState(false)
 
   useEffect(() => {
-    const hasAccepted = typeof window !== 'undefined'
-      ? localStorage.getItem('disclaimerAcceptedGSLO')
-      : null
+    if (typeof window === 'undefined') return
+
+    console.log('Disclaimer useEffect running')
+    const hasAccepted = localStorage.getItem('disclaimerAcceptedGSLO')
+    console.log('hasAccepted value:', hasAccepted)
 
     if (!hasAccepted) {
       setIsOpen(true)
@@ -20,10 +22,14 @@ export default function DisclaimerModal() {
 
   const handleProceed = () => {
     if (!isChecked) return
-    localStorage.setItem('disclaimerAcceptedGSLO', 'true')
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('disclaimerAcceptedGSLO', 'true')
+      document.body.style.overflow = 'unset'
+    }
     setIsOpen(false)
-    document.body.style.overflow = 'unset'
   }
+
+  if (!isOpen) return null
 
   return (
     <AnimatePresence>
@@ -57,7 +63,16 @@ export default function DisclaimerModal() {
               <div className="px-8 py-6 overflow-y-auto max-h-[60vh]">
                 <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
                   <p className="text-justify">
-                    The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website, www.gauravsharmalawoffices.com, you acknowledge and confirm that you are seeking information relating to Gaurav Sharma Law Offices of your own accord and that there has been no form of solicitation, advertisement or inducement by Gaurav Sharma Law Offices or its members.
+                    The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website,{' '}
+                    <a
+                      href="https://www.gauravsharmalawoffices.com"
+                      className="underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      www.gauravsharmalawoffices.com
+                    </a>
+                    , you acknowledge and confirm that you are seeking information relating to Gaurav Sharma Law Offices of your own accord and that there has been no form of solicitation, advertisement or inducement by Gaurav Sharma Law Offices or its members.
                   </p>
                   <p className="text-justify">
                     The content of this website is for informational purposes only and should not be interpreted as soliciting or advertisement. No material/information provided on this website should be construed as legal advice. Gaurav Sharma Law Offices shall not be liable for consequences of any action taken by relying on the material/information provided on this website.

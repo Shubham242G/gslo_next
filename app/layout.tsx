@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import { JSX } from 'react';
 import Footer from './components/Footer';
 import ChatBot from './bot/bot'
+import DisclaimerModal from './components/DisclaimerModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,9 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <DisclaimerModal />
         {/* Navbar will appear on EVERY page */}
         <Navbar />
-        
         {/* Page content goes here */}
         {children}
         <ChatBot/>
