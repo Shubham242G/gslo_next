@@ -24,7 +24,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} px-4 sm:px-6 md:px-8`}>
         <DisclaimerModal />
         {/* Navbar will appear on EVERY page */}
         <Navbar />
