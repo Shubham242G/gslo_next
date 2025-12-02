@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function DisclaimerModal() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked, setIsChecked] = useState(true) // already checked
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -65,12 +65,12 @@ export default function DisclaimerModal() {
                   <p className="text-justify">
                     The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website,{' '}
                     <a
-                      href="https://www.gauravsharmalawoffices.com"
+                      href="https://www.gslo.in"
                       className="underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      www.gauravsharmalawoffices.com
+                      www.gslo.in
                     </a>
                     , you acknowledge and confirm that you are seeking information relating to Gaurav Sharma Law Offices of your own accord and that there has been no form of solicitation, advertisement or inducement by Gaurav Sharma Law Offices or its members.
                   </p>
