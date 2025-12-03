@@ -65,8 +65,8 @@ export default function HeroSection(): JSX.Element {
       className="flex flex-col items-center w-full text-center z-[150]"
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6 max-w-xl mx-auto">
-        <span className="block text-center w-full">Your legal</span>
-        <span className="block text-center w-full">ally</span>
+        <span className="block text-center w-full">Your Legal</span>
+        <span className="block text-center w-full">Ally</span>
       </h1>
       <p className="text-sm sm:text-base md:text-lg text-gray-300 font-light tracking-wider max-w-xl mx-auto leading-relaxed">
         Decades of expertise. Dedicated to justice.
