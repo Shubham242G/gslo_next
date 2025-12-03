@@ -60,7 +60,7 @@ export default function HeroSection(): JSX.Element {
           >
             <motion.a
               href="/pages/contactUs"
-              className="group md:mt-[400px] flex items-center gap-3 px-6 py-2 border border-white rounded-full text-white font-light text-sm tracking-wide hover:bg-white hover:text-black transition-all duration-300"
+              className="group flex items-center gap-3 px-6 py-2 border border-white rounded-full text-white font-light text-sm tracking-wide hover:bg-white hover:text-black transition-all duration-300 md:border-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

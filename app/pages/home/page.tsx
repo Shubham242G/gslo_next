@@ -8,7 +8,8 @@ import HeroSection from './heroSection/page';
 
 export default function HomePage(): JSX.Element {
   return (
-    <main className="bg-[#0a0e27]">
+    <main className="bg-[#0a0e27] overflow-x-hidden">
+      
       <HeroSection />
       <WhoWeAreSection/>
       <IntroSection />

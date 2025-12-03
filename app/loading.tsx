@@ -2,7 +2,7 @@
 
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center h-screen bg-white">
+    <div className="flex items-center justify-center bg-white">
       <video
         autoPlay
         loop

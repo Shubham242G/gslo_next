@@ -18,7 +18,7 @@ export default function Footer(): JSX.Element {
 
   const navLinks = [
     { name: 'ABOUT', href: '/pages/about' },
-    { name: 'SOLUTIONS', href: 'pages/services' },
+    { name: 'SERVICES', href: 'pages/services' },
     // { name: 'INSIGHTS', href: '/blogs' },
     { name: 'CONTACT', href: 'pages/contactUs' },
   ];
