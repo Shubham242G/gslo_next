@@ -28,7 +28,7 @@ export default function Navbar(): JSX.Element {
 
   const socialLinks: SocialLink[] = [
     { icon: Instagram, href: 'https://www.instagram.com/gslo_official?igsh=MXU5YTdmemszdzB2bQ==', label: 'Instagram' },
-    { icon: Facebook, href: 'https://www.facebook.com/share/1BZFqbdfhA/', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/177Ktm5qT6/', label: 'Facebook' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/gaurav-sharma-82a87125b/', label: 'LinkedIn' },
   ];
 

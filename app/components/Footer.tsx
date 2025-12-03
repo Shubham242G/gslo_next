@@ -56,13 +56,13 @@ export default function Footer(): JSX.Element {
 
           {/* Social Icons */}
           <div className="flex items-center gap-5 text-gray-300 mt-6">
-            <a href="https://www.linkedin.com/company/unsaathi" aria-label="LinkedIn" className="hover:text-white transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/gaurav-sharma-82a87125b/" aria-label="LinkedIn" className="hover:text-white transition-colors duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="https://www.instagram.com/official_unsaathi" aria-label="Instagram" className="hover:text-white transition-colors duration-300">
+            <a href="https://www.instagram.com/gslo_official?igsh=MXU5YTdmemszdzB2bQ==" aria-label="Instagram" className="hover:text-white transition-colors duration-300">
               <Instagram size={24} />
             </a>
-            <a href="https://www.facebook.com/share/1AmiCrdNcR/" aria-label="Facebook" className="hover:text-[#3b5998] mt-1 transition-colors duration-300">
+            <a href="https://www.facebook.com/share/177Ktm5qT6/" aria-label="Facebook" className="hover:text-[#3b5998] mt-1 transition-colors duration-300">
               <Facebook size={20} />
             </a>
           </div>
