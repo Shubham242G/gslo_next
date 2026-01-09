@@ -22,7 +22,7 @@ export default function Navbar(): JSX.Element {
   const navLinks: NavLink[] = [
     { name: 'ABOUT', href: '/pages/about' },
     { name: 'SERVICES', href: '/pages/services' },
-    // { name: 'BLOGS', href: '/pages/contact-us' },
+    { name: 'BLOGS', href: '/pages/blogSection' },
     { name: 'CONTACT', href: '/pages/contactUs' },
   ];
 

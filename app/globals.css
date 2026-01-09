@@ -3,11 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
+/* ===============================
+   THEME VARIABLES
+================================ */
 
 @theme inline {
   --color-background: var(--background);
@@ -16,12 +14,20 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ===============================
+   DARK MODE DEFAULT
+================================ */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+
+/* ===============================
+   BASE BODY STYLES
+================================ */
 
 body {
   background: var(--background);
