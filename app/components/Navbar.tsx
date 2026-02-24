@@ -24,6 +24,8 @@ export default function Navbar(): JSX.Element {
     { name: 'SERVICES', href: '/pages/services' },
     { name: 'BLOGS', href: '/pages/blogSection' },
     { name: 'CONTACT', href: '/pages/contactUs' },
+    { name: 'TERMS & CONDITIONS', href: '/pages/terms&conditions' },
+
   ];
 
   const socialLinks: SocialLink[] = [
