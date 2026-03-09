@@ -43,7 +43,7 @@ export default function AboutUsPage(): JSX.Element {
   {
     name: 'Laxman Kumar',
     title: 'Associate Lawyer',
-    imageUrl: '/assets/laxman1.jpg', 
+    imageUrl: '/assets/laxman.jpg', 
     summary: 'With a sharp legal mind and a strong commitment to justice. He graduated from Delhi University with an LLB and is a dedicated advocate for his clients rights in the courtroom. His relentless pursuit of favorable outcomes for his clients has earned him a reputation as a formidable legal advocate.',
     linkedinUrl: 'https://www.linkedin.com/in/john-smith-11223/',
   },
@@ -95,7 +95,7 @@ export default function AboutUsPage(): JSX.Element {
       transition={{ duration: 0.8 }}
     >
       <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight">
-        YouR Objectives,<br />Our Purpose.
+        Your Objectives,<br />Our Purpose.
       </h1>
 
       <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-10">
