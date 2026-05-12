@@ -48,8 +48,6 @@ export default function Footer(): JSX.Element {
               <li><span className="font-semibold text-white">Delhi:</span> Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand, Najafgarh, New Delhi - 110043</li>
               <li><span className="font-semibold text-white">Gurgaon:</span> 412, Emaar Colonande, Golf Course Extension Rd, Sec-66, Gurgaon-122018</li>
               <li><span className="font-semibold text-white">Noida:</span> 208-209, Tower-E, Alphathum, Noida-201305</li>
-              <li><span className="font-semibold text-white">Bhopal:</span> 401, B-Block HIG, Vijay Stambh, Zone-1, MP Nagar, Bhopal-462011</li>
-              <li><span className="font-semibold text-white">Indore:</span> 205, B-Block, The One, RNT Marg, Near High Court, Indore-452001</li>
             </ul>
           </div>
 
@@ -136,3 +134,4 @@ export default function Footer(): JSX.Element {
     </footer>
   );
 }
+
