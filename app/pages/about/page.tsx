@@ -21,7 +21,7 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 
 const founder = { 
     name: "Gaurav Sharma", 
-    title: "Founder & Managing Partner", 
+    title: "Founder", 
     imageUrl: "/assets/founder.webp",
     bio: [
       "Gaurav Sharma established GSLO with a vision to create a law firm that combines deep legal expertise with a genuine commitment to client success. With over 17 years of experience, he has earned a reputation as a formidable litigator and a trusted advisor.",
